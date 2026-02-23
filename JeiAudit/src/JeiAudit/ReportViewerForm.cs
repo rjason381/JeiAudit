@@ -93,8 +93,9 @@ namespace JeiAudit
             Width = 1700;
             Height = 980;
             MinimumSize = new Size(1200, 760);
-            BackColor = Color.FromArgb(236, 236, 236);
+            BackColor = UiTheme.WindowBackground;
             AutoScaleMode = AutoScaleMode.Dpi;
+            UiTheme.EnableSmoothRendering(this);
 
             Panel header = BuildHeader();
             Panel footer = BuildFooter();
@@ -103,7 +104,7 @@ namespace JeiAudit
             {
                 Dock = DockStyle.Fill,
                 Padding = new Padding(20, 16, 20, 16),
-                BackColor = Color.FromArgb(236, 236, 236)
+                BackColor = UiTheme.WindowBackground
             };
             Controls.Add(content);
             Controls.Add(footer);
@@ -119,19 +120,55 @@ namespace JeiAudit
                 AutoScroll = true,
                 WrapContents = false,
                 FlowDirection = FlowDirection.TopDown,
-                BackColor = Color.White
+                BackColor = UiTheme.Surface
             };
             _resultsFlow.SizeChanged += (_, _) => ResizeResultCards();
 
-            Panel summaryCard = BuildCard(content);
-            summaryCard.Dock = DockStyle.Top;
-            summaryCard.Height = 214;
-            BuildSummaryCard(summaryCard, out _modelTagLabel, out _scoreLabel, out _summaryLabel, out _reportDateLabel, out _modelPathLabel, out _xmlPathLabel);
+            Panel topRowCard = BuildCard(content);
+            topRowCard.Dock = DockStyle.Top;
+            topRowCard.Height = 166;
+            topRowCard.Padding = new Padding(0);
 
-            Panel metadataCard = BuildCard(content);
-            metadataCard.Dock = DockStyle.Top;
-            metadataCard.Height = 172;
-            BuildMetadataCard(metadataCard, out _titleValueLabel, out _dateValueLabel, out _authorValueLabel, out _descriptionValueLabel);
+            var topLayout = new TableLayoutPanel
+            {
+                Parent = topRowCard,
+                Dock = DockStyle.Fill,
+                ColumnCount = 2,
+                RowCount = 1,
+                Margin = Padding.Empty,
+                Padding = Padding.Empty,
+                BackColor = UiTheme.Surface
+            };
+            topLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 54f));
+            topLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 46f));
+            topLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100f));
+
+            var metadataPanel = new Panel
+            {
+                Parent = topLayout,
+                Dock = DockStyle.Fill,
+                Margin = Padding.Empty,
+                BackColor = UiTheme.Surface
+            };
+            metadataPanel.Paint += (_, e) =>
+            {
+                using (var pen = new Pen(UiTheme.Border))
+                {
+                    e.Graphics.DrawLine(pen, metadataPanel.Width - 1, 0, metadataPanel.Width - 1, metadataPanel.Height);
+                }
+            };
+            topLayout.Controls.Add(metadataPanel, 0, 0);
+            BuildMetadataCard(metadataPanel, out _titleValueLabel, out _dateValueLabel, out _authorValueLabel, out _descriptionValueLabel, compact: true);
+
+            var summaryPanel = new Panel
+            {
+                Parent = topLayout,
+                Dock = DockStyle.Fill,
+                Margin = Padding.Empty,
+                BackColor = UiTheme.Surface
+            };
+            topLayout.Controls.Add(summaryPanel, 1, 0);
+            BuildSummaryCard(summaryPanel, out _modelTagLabel, out _scoreLabel, out _summaryLabel, out _reportDateLabel, out _modelPathLabel, out _xmlPathLabel, compact: true);
 
             BindData();
         }
@@ -141,8 +178,8 @@ namespace JeiAudit
             var header = new Panel
             {
                 Dock = DockStyle.Top,
-                Height = 78,
-                BackColor = Color.FromArgb(57, 67, 82)
+                Height = 72,
+                BackColor = UiTheme.HeaderBackground
             };
 
             var logo = new Panel
@@ -151,12 +188,12 @@ namespace JeiAudit
                 Width = 22,
                 Height = 22,
                 Left = 16,
-                Top = 13,
-                BackColor = Color.FromArgb(226, 202, 122)
+                Top = 11,
+                BackColor = UiTheme.AccentSoft
             };
             logo.Paint += (_, e) =>
             {
-                using (var pen = new Pen(Color.FromArgb(107, 107, 107), 2))
+                using (var pen = new Pen(UiTheme.Accent, 2))
                 {
                     e.Graphics.DrawRectangle(pen, 1, 1, 19, 19);
                 }
@@ -164,21 +201,21 @@ namespace JeiAudit
 
             header.Controls.Add(new Label
             {
-                Text = "HERRAMIENTA DE AUDITOR\u00CDA JEIAUDIT",
-                ForeColor = Color.White,
-                Font = new Font("Segoe UI", 18f, FontStyle.Regular),
+                Text = "Herramienta de auditor\u00EDa JeiAudit",
+                ForeColor = UiTheme.HeaderTitle,
+                Font = new Font("Segoe UI", 15f, FontStyle.Bold),
                 AutoSize = true,
                 Left = 54,
-                Top = 6
+                Top = 4
             });
             header.Controls.Add(new Label
             {
                 Text = "Desarrollado por Jason Rojas Estrada - Coordinador BIM, Inspirada en herramientas de Autodesk",
-                ForeColor = Color.FromArgb(220, 220, 220),
-                Font = new Font("Segoe UI", 9.5f, FontStyle.Regular),
+                ForeColor = UiTheme.HeaderSubtitle,
+                Font = new Font("Segoe UI", 9f, FontStyle.Regular),
                 AutoSize = true,
                 Left = 54,
-                Top = 42
+                Top = 34
             });
 
             var help = new Label
@@ -191,8 +228,8 @@ namespace JeiAudit
                 Left = header.Width - 42,
                 Anchor = AnchorStyles.Top | AnchorStyles.Right,
                 TextAlign = ContentAlignment.MiddleCenter,
-                ForeColor = Color.FromArgb(57, 67, 82),
-                BackColor = Color.FromArgb(208, 213, 220),
+                ForeColor = UiTheme.HeaderBackground,
+                BackColor = UiTheme.AccentSoft,
                 Font = new Font("Segoe UI", 13f, FontStyle.Bold)
             };
 
@@ -204,15 +241,23 @@ namespace JeiAudit
             var footer = new Panel
             {
                 Dock = DockStyle.Bottom,
-                Height = 66,
-                BackColor = Color.FromArgb(98, 98, 98)
+                Height = 60,
+                BackColor = UiTheme.Surface
+            };
+            footer.Paint += (_, e) =>
+            {
+                using (var pen = new Pen(UiTheme.Border))
+                {
+                    e.Graphics.DrawLine(pen, 0, 0, footer.Width, 0);
+                }
             };
 
             var table = new TableLayoutPanel
             {
                 Parent = footer,
                 Dock = DockStyle.Fill,
-                ColumnCount = 7
+                ColumnCount = 7,
+                Padding = new Padding(10, 10, 10, 10)
             };
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857f));
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857f));
@@ -228,35 +273,33 @@ namespace JeiAudit
             table.Controls.Add(BuildFooterButton("PDF", (_, _) => ExportPdf()), 3, 0);
             table.Controls.Add(BuildFooterButton("Excel", (_, _) => OpenExcelReport()), 4, 0);
             table.Controls.Add(BuildFooterButton("AVT", (_, _) => ExportAvtLikeFile()), 5, 0);
-            table.Controls.Add(BuildFooterButton("Cerrar", (_, _) => Close()), 6, 0);
+            table.Controls.Add(BuildFooterButton("Cerrar", (_, _) => Close(), primary: true), 6, 0);
             return footer;
         }
 
-        private static Button BuildFooterButton(string text, EventHandler click)
+        private static Button BuildFooterButton(string text, EventHandler click, bool primary = false)
         {
             var button = new Button
             {
                 Text = text,
                 Dock = DockStyle.Fill,
-                BackColor = Color.FromArgb(98, 98, 98),
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 19f, FontStyle.Regular)
+                Margin = new Padding(4, 0, 4, 0)
             };
-            button.FlatAppearance.BorderSize = 0;
+            UiTheme.StyleFooterButton(button, primary);
             button.Click += click;
             return button;
         }
 
         private static Panel BuildCard(Control parent)
         {
-            return new Panel
+            var panel = new Panel
             {
                 Parent = parent,
-                BackColor = Color.White,
-                BorderStyle = BorderStyle.FixedSingle,
+                BackColor = UiTheme.Surface,
                 Margin = new Padding(0, 10, 0, 0)
             };
+            UiTheme.StyleCard(panel);
+            return panel;
         }
 
         private static void BuildMetadataCard(
@@ -264,7 +307,8 @@ namespace JeiAudit
             out Label titleValue,
             out Label dateValue,
             out Label authorValue,
-            out Label descriptionValue)
+            out Label descriptionValue,
+            bool compact = false)
         {
             var layout = new TableLayoutPanel
             {
@@ -275,7 +319,7 @@ namespace JeiAudit
                 Margin = Padding.Empty,
                 Padding = Padding.Empty
             };
-            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 128f));
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, compact ? 84f : 128f));
             layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f));
             layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100f));
 
@@ -285,29 +329,55 @@ namespace JeiAudit
                 Margin = Padding.Empty,
                 BackColor = Color.White
             };
-            icon.Paint += (_, e) => DrawCube(e.Graphics);
+            icon.Paint += (_, e) =>
+            {
+                if (!compact)
+                {
+                    DrawCube(e.Graphics);
+                    return;
+                }
+
+                var top = new[] { new Point(10, 30), new Point(22, 18), new Point(52, 18), new Point(40, 30) };
+                var left = new[] { new Point(10, 30), new Point(40, 30), new Point(40, 60), new Point(10, 60) };
+                var right = new[] { new Point(40, 30), new Point(52, 18), new Point(52, 48), new Point(40, 60) };
+
+                using (var topBrush = new SolidBrush(Color.FromArgb(231, 231, 231)))
+                using (var leftBrush = new SolidBrush(Color.FromArgb(226, 202, 122)))
+                using (var rightBrush = new SolidBrush(Color.FromArgb(197, 200, 205)))
+                using (var pen = new Pen(Color.FromArgb(107, 107, 107), 2))
+                {
+                    e.Graphics.FillPolygon(topBrush, top);
+                    e.Graphics.FillPolygon(leftBrush, left);
+                    e.Graphics.FillPolygon(rightBrush, right);
+                    e.Graphics.DrawPolygon(pen, top);
+                    e.Graphics.DrawPolygon(pen, left);
+                    e.Graphics.DrawPolygon(pen, right);
+                }
+            };
             layout.Controls.Add(icon, 0, 0);
 
             var textPanel = new TableLayoutPanel
             {
                 Margin = Padding.Empty,
                 Dock = DockStyle.Fill,
-                Padding = new Padding(10, 10, 12, 8),
+                Padding = compact ? new Padding(8, 8, 10, 6) : new Padding(10, 10, 12, 8),
                 ColumnCount = 2,
                 RowCount = 4
             };
-            textPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120f));
+            textPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, compact ? 86f : 120f));
             textPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f));
-            textPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 32f));
-            textPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 32f));
-            textPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 32f));
+            textPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, compact ? 28f : 32f));
+            textPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, compact ? 28f : 32f));
+            textPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, compact ? 28f : 32f));
             textPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100f));
             layout.Controls.Add(textPanel, 1, 0);
 
-            titleValue = BuildKeyValueRow(textPanel, row: 0, caption: "Titulo", multiline: false, captionFontSize: 15f, valueFontSize: 12f);
-            dateValue = BuildKeyValueRow(textPanel, row: 1, caption: "Fecha", multiline: false, captionFontSize: 15f, valueFontSize: 12f);
-            authorValue = BuildKeyValueRow(textPanel, row: 2, caption: "Autor", multiline: false, captionFontSize: 15f, valueFontSize: 12f);
-            descriptionValue = BuildKeyValueRow(textPanel, row: 3, caption: "Descripcion", multiline: true, captionFontSize: 15f, valueFontSize: 12f);
+            float captionSize = compact ? 11f : 15f;
+            float valueSize = compact ? 10.5f : 12f;
+            titleValue = BuildKeyValueRow(textPanel, row: 0, caption: "Titulo", multiline: false, captionFontSize: captionSize, valueFontSize: valueSize);
+            dateValue = BuildKeyValueRow(textPanel, row: 1, caption: "Fecha", multiline: false, captionFontSize: captionSize, valueFontSize: valueSize);
+            authorValue = BuildKeyValueRow(textPanel, row: 2, caption: "Autor", multiline: false, captionFontSize: captionSize, valueFontSize: valueSize);
+            descriptionValue = BuildKeyValueRow(textPanel, row: 3, caption: "Descripcion", multiline: true, captionFontSize: captionSize, valueFontSize: valueSize);
         }
 
         private static Label BuildKeyValueRow(
@@ -351,14 +421,15 @@ namespace JeiAudit
             out Label summaryLabel,
             out Label dateLabel,
             out Label modelPathLabel,
-            out Label xmlPathLabel)
+            out Label xmlPathLabel,
+            bool compact = false)
         {
             var tabPanel = new Panel
             {
                 Parent = card,
                 Dock = DockStyle.Top,
-                Height = 36,
-                BackColor = Color.White
+                Height = compact ? 28 : 36,
+                BackColor = UiTheme.Surface
             };
             modelTagLabel = new Label
             {
@@ -367,12 +438,12 @@ namespace JeiAudit
                 Left = 0,
                 Top = 0,
                 Width = 420,
-                Height = 36,
+                Height = compact ? 28 : 36,
                 BackColor = Color.FromArgb(241, 241, 241),
                 ForeColor = Color.FromArgb(106, 106, 106),
-                Font = new Font("Segoe UI", 12f, FontStyle.Regular),
+                Font = new Font("Segoe UI", compact ? 9.5f : 12f, FontStyle.Regular),
                 TextAlign = ContentAlignment.MiddleLeft,
-                Padding = new Padding(10, 0, 10, 0),
+                Padding = new Padding(compact ? 8 : 10, 0, compact ? 8 : 10, 0),
                 AutoEllipsis = true
             };
 
@@ -380,13 +451,13 @@ namespace JeiAudit
             {
                 Parent = card,
                 Dock = DockStyle.Fill,
-                BackColor = Color.White,
+                BackColor = UiTheme.Surface,
                 ColumnCount = 2,
                 RowCount = 1,
                 Margin = Padding.Empty,
                 Padding = Padding.Empty
             };
-            body.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 220f));
+            body.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, compact ? 146f : 220f));
             body.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f));
             body.RowStyles.Add(new RowStyle(SizeType.Percent, 100f));
 
@@ -402,7 +473,7 @@ namespace JeiAudit
                 Parent = scorePanel,
                 Dock = DockStyle.Fill,
                 Text = "0%",
-                Font = new Font("Segoe UI", 56f, FontStyle.Bold),
+                Font = new Font("Segoe UI", compact ? 44f : 56f, FontStyle.Bold),
                 ForeColor = Color.FromArgb(213, 39, 39),
                 TextAlign = ContentAlignment.MiddleCenter
             };
@@ -411,22 +482,24 @@ namespace JeiAudit
             {
                 Margin = Padding.Empty,
                 Dock = DockStyle.Fill,
-                Padding = new Padding(10, 8, 10, 6),
+                Padding = compact ? new Padding(8, 6, 8, 4) : new Padding(10, 8, 10, 6),
                 ColumnCount = 2,
                 RowCount = 4
             };
-            infoPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 242f));
+            infoPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, compact ? 132f : 242f));
             infoPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f));
-            infoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 36f));
-            infoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 36f));
-            infoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 36f));
-            infoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 36f));
+            infoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, compact ? 30f : 36f));
+            infoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, compact ? 30f : 36f));
+            infoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, compact ? 30f : 36f));
+            infoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, compact ? 30f : 36f));
             body.Controls.Add(infoPanel, 1, 0);
 
-            summaryLabel = BuildKeyValueRow(infoPanel, row: 0, caption: "Resumen de chequeos", multiline: false, captionFontSize: 15f, valueFontSize: 12f);
-            dateLabel = BuildKeyValueRow(infoPanel, row: 1, caption: "Fecha del informe", multiline: false, captionFontSize: 15f, valueFontSize: 12f);
-            modelPathLabel = BuildKeyValueRow(infoPanel, row: 2, caption: "Revit FilePath", multiline: false, captionFontSize: 15f, valueFontSize: 12f);
-            xmlPathLabel = BuildKeyValueRow(infoPanel, row: 3, caption: "Archivo Checkset", multiline: false, captionFontSize: 15f, valueFontSize: 12f);
+            float captionSize = compact ? 11f : 15f;
+            float valueSize = compact ? 10.5f : 12f;
+            summaryLabel = BuildKeyValueRow(infoPanel, row: 0, caption: "Resumen de chequeos", multiline: false, captionFontSize: captionSize, valueFontSize: valueSize);
+            dateLabel = BuildKeyValueRow(infoPanel, row: 1, caption: "Fecha del informe", multiline: false, captionFontSize: captionSize, valueFontSize: valueSize);
+            modelPathLabel = BuildKeyValueRow(infoPanel, row: 2, caption: "Revit FilePath", multiline: false, captionFontSize: captionSize, valueFontSize: valueSize);
+            xmlPathLabel = BuildKeyValueRow(infoPanel, row: 3, caption: "Archivo Checkset", multiline: false, captionFontSize: captionSize, valueFontSize: valueSize);
         }
 
         private void BindData()

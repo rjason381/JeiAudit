@@ -37,7 +37,8 @@ namespace JeiAudit
             Width = 840;
             Height = 700;
             MinimumSize = new Size(760, 620);
-            BackColor = Color.FromArgb(236, 236, 236);
+            BackColor = UiTheme.WindowBackground;
+            UiTheme.EnableSmoothRendering(this);
 
             Panel header = BuildHeader();
             Controls.Add(header);
@@ -48,7 +49,8 @@ namespace JeiAudit
             Panel content = new Panel
             {
                 Dock = DockStyle.Fill,
-                Padding = new Padding(22, 16, 22, 22)
+                Padding = new Padding(22, 16, 22, 22),
+                BackColor = UiTheme.WindowBackground
             };
             Controls.Add(content);
 
@@ -73,26 +75,26 @@ namespace JeiAudit
             var header = new Panel
             {
                 Dock = DockStyle.Top,
-                Height = 78,
-                BackColor = Color.FromArgb(57, 67, 82)
+                Height = 72,
+                BackColor = UiTheme.HeaderBackground
             };
             header.Controls.Add(new Label
             {
-                Text = "HERRAMIENTA DE AUDITOR\u00CDA JEIAUDIT",
-                ForeColor = Color.White,
-                Font = new Font("Segoe UI", 18f, FontStyle.Regular),
+                Text = "Herramienta de auditor\u00EDa JeiAudit",
+                ForeColor = UiTheme.HeaderTitle,
+                Font = new Font("Segoe UI", 15f, FontStyle.Bold),
                 AutoSize = true,
                 Left = 54,
-                Top = 6
+                Top = 4
             });
             header.Controls.Add(new Label
             {
                 Text = "Desarrollado por Jason Rojas Estrada - Coordinador BIM, Inspirada en herramientas de Autodesk",
-                ForeColor = Color.FromArgb(220, 220, 220),
-                Font = new Font("Segoe UI", 9.5f, FontStyle.Regular),
+                ForeColor = UiTheme.HeaderSubtitle,
+                Font = new Font("Segoe UI", 9f, FontStyle.Regular),
                 AutoSize = true,
                 Left = 54,
-                Top = 42
+                Top = 34
             });
             var logo = new Panel
             {
@@ -100,12 +102,12 @@ namespace JeiAudit
                 Width = 22,
                 Height = 22,
                 Left = 16,
-                Top = 13,
-                BackColor = Color.FromArgb(226, 202, 122)
+                Top = 11,
+                BackColor = UiTheme.AccentSoft
             };
             logo.Paint += (_, e) =>
             {
-                using (var pen = new Pen(Color.FromArgb(107, 107, 107), 2))
+                using (var pen = new Pen(UiTheme.Accent, 2))
                 {
                     e.Graphics.DrawRectangle(pen, 1, 1, 19, 19);
                 }
@@ -118,20 +120,28 @@ namespace JeiAudit
             var footer = new Panel
             {
                 Dock = DockStyle.Bottom,
-                Height = 66,
-                BackColor = Color.FromArgb(98, 98, 98)
+                Height = 58,
+                BackColor = UiTheme.Surface
+            };
+            footer.Paint += (_, e) =>
+            {
+                using (var pen = new Pen(UiTheme.Border))
+                {
+                    e.Graphics.DrawLine(pen, 0, 0, footer.Width, 0);
+                }
             };
 
             var table = new TableLayoutPanel
             {
                 Parent = footer,
                 Dock = DockStyle.Fill,
-                ColumnCount = 2
+                ColumnCount = 2,
+                Padding = new Padding(12, 10, 12, 10)
             };
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50f));
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50f));
 
-            Button cancel = BuildFooterButton("Cancelar");
+            Button cancel = BuildFooterButton("Cancelar", primary: false);
             cancel.Click += (_, _) =>
             {
                 DialogResult = DialogResult.Cancel;
@@ -139,37 +149,35 @@ namespace JeiAudit
             };
             table.Controls.Add(cancel, 0, 0);
 
-            Button run = BuildFooterButton("Ejecutar comprobacion");
+            Button run = BuildFooterButton("Ejecutar comprobacion", primary: true);
             run.Click += (_, _) => ExecuteRun();
             table.Controls.Add(run, 1, 0);
 
             return footer;
         }
 
-        private static Button BuildFooterButton(string text)
+        private static Button BuildFooterButton(string text, bool primary)
         {
             var button = new Button
             {
                 Dock = DockStyle.Fill,
                 Text = text,
-                Font = new Font("Segoe UI", 21f, FontStyle.Regular),
-                BackColor = Color.FromArgb(98, 98, 98),
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat
+                Margin = new Padding(6, 0, 6, 0)
             };
-            button.FlatAppearance.BorderSize = 0;
+            UiTheme.StyleFooterButton(button, primary);
             return button;
         }
 
         private static Panel BuildCard(Control parent)
         {
-            return new Panel
+            var panel = new Panel
             {
                 Parent = parent,
-                BackColor = Color.White,
-                BorderStyle = BorderStyle.FixedSingle,
+                BackColor = UiTheme.Surface,
                 Margin = new Padding(0, 10, 0, 0)
             };
+            UiTheme.StyleCard(panel);
+            return panel;
         }
 
         private static void BuildMetadata(Panel card, RunAuditChecksetMetadata metadata)
@@ -179,7 +187,7 @@ namespace JeiAudit
                 Parent = card,
                 Width = 128,
                 Dock = DockStyle.Left,
-                BackColor = Color.White
+                BackColor = UiTheme.Surface
             };
             icon.Paint += (_, e) =>
             {
@@ -205,7 +213,8 @@ namespace JeiAudit
             {
                 Parent = card,
                 Dock = DockStyle.Fill,
-                Padding = new Padding(12, 12, 12, 8)
+                Padding = new Padding(12, 12, 12, 8),
+                BackColor = UiTheme.Surface
             };
             BuildMetadataRow(text, "Titulo", metadata.Title, 12);
             BuildMetadataRow(text, "Fecha", metadata.Date, 50);
@@ -218,7 +227,7 @@ namespace JeiAudit
             parent.Controls.Add(new Label
             {
                 Text = label,
-                Font = new Font("Segoe UI", 15f, FontStyle.Regular),
+                Font = new Font("Segoe UI", 12f, FontStyle.Regular),
                 AutoSize = true,
                 Left = 8,
                 Top = top
@@ -226,13 +235,13 @@ namespace JeiAudit
             parent.Controls.Add(new Label
             {
                 Text = value,
-                Font = new Font("Segoe UI", 12f, FontStyle.Regular),
+                Font = new Font("Segoe UI", 10.5f, FontStyle.Regular),
                 AutoSize = false,
                 Left = 110,
                 Top = top + 5,
                 Width = 580,
                 Height = 28,
-                ForeColor = Color.FromArgb(86, 86, 86),
+                ForeColor = UiTheme.TextSecondary,
                 AutoEllipsis = true
             });
         }
@@ -244,16 +253,17 @@ namespace JeiAudit
                 Parent = runCard,
                 Dock = DockStyle.Fill,
                 SplitterDistance = 276,
-                BackColor = Color.White
+                BackColor = UiTheme.WindowBackground
             };
-            body.Panel1.BackColor = Color.White;
-            body.Panel2.BackColor = Color.White;
+            body.Panel1.BackColor = UiTheme.Surface;
+            body.Panel2.BackColor = UiTheme.Surface;
 
             var actionsPanel = new Panel
             {
                 Parent = body.Panel1,
                 Dock = DockStyle.Fill,
-                Padding = new Padding(14, 14, 14, 14)
+                Padding = new Padding(14, 14, 14, 14),
+                BackColor = UiTheme.Surface
             };
 
             Button addBtn = BuildActionButton("Agregar modelos", 0);
@@ -276,15 +286,17 @@ namespace JeiAudit
             {
                 Parent = body.Panel2,
                 Dock = DockStyle.Fill,
-                Padding = new Padding(10, 14, 14, 14)
+                Padding = new Padding(10, 14, 14, 14),
+                BackColor = UiTheme.Surface
             };
             rightPanel.Controls.Add(new Label
             {
                 Text = "Modelos a comprobar",
-                Font = new Font("Segoe UI", 16f, FontStyle.Regular),
+                Font = new Font("Segoe UI", 13f, FontStyle.Bold),
                 AutoSize = true,
                 Left = 2,
-                Top = 2
+                Top = 2,
+                ForeColor = UiTheme.TextPrimary
             });
 
             _modelsListView = new ListView
@@ -299,7 +311,8 @@ namespace JeiAudit
                 Width = rightPanel.ClientSize.Width,
                 Height = rightPanel.ClientSize.Height - 44,
                 Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
-                Font = new Font("Segoe UI", 11f, FontStyle.Regular)
+                Font = new Font("Segoe UI", 10f, FontStyle.Regular),
+                BorderStyle = BorderStyle.FixedSingle
             };
             _modelsListView.Columns.Add("Modelo", 320);
             _modelsListView.Columns.Add("Ruta", 520);
@@ -310,18 +323,17 @@ namespace JeiAudit
 
         private Button BuildActionButton(string text, int index)
         {
-            return new Button
+            var button = new Button
             {
                 Text = text,
                 Width = 238,
-                Height = 62,
+                Height = 54,
                 Left = 0,
-                Top = index * 78,
-                BackColor = Color.FromArgb(226, 202, 122),
-                ForeColor = Color.FromArgb(82, 82, 82),
-                FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 12f, FontStyle.Regular)
+                Top = index * 66,
+                Font = new Font("Segoe UI", 10f, FontStyle.Bold)
             };
+            UiTheme.StyleToolbarButton(button, primary: false);
+            return button;
         }
 
         private void PopulateModels()

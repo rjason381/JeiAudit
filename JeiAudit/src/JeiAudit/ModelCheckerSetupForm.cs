@@ -57,14 +57,16 @@ namespace JeiAudit
             Width = 1040;
             Height = 900;
             MinimumSize = new Size(980, 760);
-            BackColor = Color.FromArgb(236, 236, 236);
+            BackColor = UiTheme.WindowBackground;
+            UiTheme.EnableSmoothRendering(this);
 
             Panel header = BuildHeader();
             Panel footer = BuildFooter();
             Panel content = new Panel
             {
                 Dock = DockStyle.Fill,
-                Padding = new Padding(24, 14, 24, 24)
+                Padding = new Padding(24, 14, 24, 20),
+                BackColor = UiTheme.WindowBackground
             };
 
             Controls.Add(content);
@@ -81,10 +83,10 @@ namespace JeiAudit
                 Dock = DockStyle.Fill,
                 BorderStyle = BorderStyle.None,
                 CheckBoxes = true,
-                Font = new Font("Segoe UI", 15f, FontStyle.Regular),
+                Font = new Font("Segoe UI", 11f, FontStyle.Regular),
                 HideSelection = false,
                 FullRowSelect = true,
-                BackColor = Color.FromArgb(236, 236, 236)
+                BackColor = UiTheme.WindowBackground
             };
             _tree.AfterSelect += TreeAfterSelect;
             _tree.AfterCheck += TreeAfterCheck;
@@ -100,7 +102,7 @@ namespace JeiAudit
             {
                 Parent = rightPanel,
                 Dock = DockStyle.Fill,
-                BackColor = Color.White,
+                BackColor = UiTheme.Surface,
                 BorderStyle = BorderStyle.FixedSingle,
                 Padding = new Padding(8, 8, 8, 8)
             };
@@ -111,7 +113,7 @@ namespace JeiAudit
                 Dock = DockStyle.Top,
                 Height = 78,
                 Padding = new Padding(0, 0, 0, 6),
-                BackColor = Color.FromArgb(236, 236, 236)
+                BackColor = UiTheme.WindowBackground
             };
 
             _detailsSubtitleLabel = new Label
@@ -120,8 +122,8 @@ namespace JeiAudit
                 Text = string.Empty,
                 Dock = DockStyle.Top,
                 Height = 30,
-                Font = new Font("Segoe UI", 12f, FontStyle.Regular),
-                ForeColor = Color.FromArgb(95, 95, 95),
+                Font = new Font("Segoe UI", 10f, FontStyle.Regular),
+                ForeColor = UiTheme.TextSecondary,
                 AutoEllipsis = true
             };
 
@@ -131,8 +133,8 @@ namespace JeiAudit
                 Text = "-",
                 Dock = DockStyle.Top,
                 Height = 42,
-                Font = new Font("Segoe UI", 18f, FontStyle.Regular),
-                ForeColor = Color.FromArgb(57, 57, 57)
+                Font = new Font("Segoe UI", 14f, FontStyle.Bold),
+                ForeColor = UiTheme.TextPrimary
             };
             _detailsFlow = new FlowLayoutPanel
             {
@@ -141,7 +143,7 @@ namespace JeiAudit
                 AutoScroll = true,
                 WrapContents = false,
                 FlowDirection = FlowDirection.TopDown,
-                BackColor = Color.White
+                BackColor = UiTheme.Surface
             };
             _detailsFlow.SizeChanged += (_, _) => ResizeDetailsCards();
 
@@ -162,13 +164,10 @@ namespace JeiAudit
                 Top = 24,
                 Left = fileTextPanel.Width - 182,
                 Anchor = AnchorStyles.Top | AnchorStyles.Right,
-                BackColor = Color.FromArgb(110, 110, 110),
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 10.5f, FontStyle.Bold),
+                Font = new Font("Segoe UI", 10f, FontStyle.Bold),
                 Cursor = Cursors.Hand
             };
-            browseButton.FlatAppearance.BorderSize = 0;
+            UiTheme.StyleToolbarButton(browseButton, primary: true);
             browseButton.Click += (_, _) => BrowseXmlFile();
 
             _fileStatusLabel.Cursor = Cursors.Hand;
@@ -195,8 +194,8 @@ namespace JeiAudit
             var header = new Panel
             {
                 Dock = DockStyle.Top,
-                Height = 78,
-                BackColor = Color.FromArgb(57, 67, 82)
+                Height = 72,
+                BackColor = UiTheme.HeaderBackground
             };
             var logo = new Panel
             {
@@ -204,33 +203,33 @@ namespace JeiAudit
                 Width = 22,
                 Height = 22,
                 Left = 16,
-                Top = 13,
-                BackColor = Color.FromArgb(226, 202, 122)
+                Top = 11,
+                BackColor = UiTheme.AccentSoft
             };
             logo.Paint += (_, e) =>
             {
-                using (var pen = new Pen(Color.FromArgb(107, 107, 107), 2))
+                using (var pen = new Pen(UiTheme.Accent, 2))
                 {
                     e.Graphics.DrawRectangle(pen, 1, 1, 19, 19);
                 }
             };
             header.Controls.Add(new Label
             {
-                Text = "HERRAMIENTA DE AUDITOR\u00CDA JEIAUDIT",
-                ForeColor = Color.White,
-                Font = new Font("Segoe UI", 18f, FontStyle.Regular),
+                Text = "Herramienta de auditor\u00EDa JeiAudit",
+                ForeColor = UiTheme.HeaderTitle,
+                Font = new Font("Segoe UI", 15f, FontStyle.Bold),
                 AutoSize = true,
                 Left = 54,
-                Top = 6
+                Top = 4
             });
             header.Controls.Add(new Label
             {
                 Text = "Desarrollado por Jason Rojas Estrada - Coordinador BIM, Inspirada en herramientas de Autodesk",
-                ForeColor = Color.FromArgb(220, 220, 220),
-                Font = new Font("Segoe UI", 9.5f, FontStyle.Regular),
+                ForeColor = UiTheme.HeaderSubtitle,
+                Font = new Font("Segoe UI", 9f, FontStyle.Regular),
                 AutoSize = true,
                 Left = 54,
-                Top = 42
+                Top = 34
             });
             return header;
         }
@@ -240,14 +239,22 @@ namespace JeiAudit
             var footer = new Panel
             {
                 Dock = DockStyle.Bottom,
-                Height = 60,
-                BackColor = Color.FromArgb(98, 98, 98)
+                Height = 58,
+                BackColor = UiTheme.Surface
+            };
+            footer.Paint += (_, e) =>
+            {
+                using (var pen = new Pen(UiTheme.Border))
+                {
+                    e.Graphics.DrawLine(pen, 0, 0, footer.Width, 0);
+                }
             };
             var table = new TableLayoutPanel
             {
                 Parent = footer,
                 Dock = DockStyle.Fill,
-                ColumnCount = 3
+                ColumnCount = 3,
+                Padding = new Padding(12, 10, 12, 10)
             };
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
@@ -261,7 +268,7 @@ namespace JeiAudit
             _saveButton.Click += (_, _) => SaveXml(showMessage: true);
             table.Controls.Add(_saveButton, 1, 0);
 
-            _saveCloseButton = BuildFooterButton("Guardar y cerrar");
+            _saveCloseButton = BuildFooterButton("Guardar y cerrar", primary: true);
             _saveCloseButton.Click += (_, _) =>
             {
                 if (SaveXml(showMessage: false))
@@ -275,18 +282,15 @@ namespace JeiAudit
             return footer;
         }
 
-        private static Button BuildFooterButton(string text)
+        private static Button BuildFooterButton(string text, bool primary = false)
         {
             var button = new Button
             {
                 Dock = DockStyle.Fill,
                 Text = text,
-                Font = new Font("Segoe UI", 23f, FontStyle.Regular),
-                BackColor = Color.FromArgb(98, 98, 98),
-                ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat
+                Margin = new Padding(6, 0, 6, 0)
             };
-            button.FlatAppearance.BorderSize = 0;
+            UiTheme.StyleFooterButton(button, primary);
             return button;
         }
 
@@ -295,10 +299,10 @@ namespace JeiAudit
             var panel = new Panel
             {
                 Parent = parent,
-                BackColor = Color.White,
-                BorderStyle = BorderStyle.FixedSingle,
+                BackColor = UiTheme.Surface,
                 Margin = new Padding(0, 10, 0, 0)
             };
+            UiTheme.StyleCard(panel);
             return panel;
         }
 
@@ -309,10 +313,10 @@ namespace JeiAudit
                 Parent = parent,
                 Dock = DockStyle.Fill,
                 SplitterDistance = 380,
-                BackColor = Color.FromArgb(236, 236, 236)
+                BackColor = UiTheme.WindowBackground
             };
-            split.Panel1.BackColor = Color.FromArgb(236, 236, 236);
-            split.Panel2.BackColor = Color.FromArgb(236, 236, 236);
+            split.Panel1.BackColor = UiTheme.WindowBackground;
+            split.Panel2.BackColor = UiTheme.WindowBackground;
             return split;
         }
 
@@ -355,10 +359,11 @@ namespace JeiAudit
             fileTextPanel.Controls.Add(new Label
             {
                 Text = "Archivo Checkset actual",
-                Font = new Font("Segoe UI", 15f, FontStyle.Regular),
+                Font = new Font("Segoe UI", 12f, FontStyle.Bold),
                 AutoSize = true,
                 Left = 4,
-                Top = 4
+                Top = 6,
+                ForeColor = UiTheme.TextPrimary
             });
 
             filePathLabel = new Label
@@ -371,7 +376,7 @@ namespace JeiAudit
                 Top = 36,
                 Width = 320,
                 Height = 26,
-                ForeColor = Color.FromArgb(96, 96, 96),
+                ForeColor = UiTheme.TextSecondary,
                 AutoEllipsis = true,
                 Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right
             };
@@ -381,7 +386,7 @@ namespace JeiAudit
                 Parent = card,
                 Width = 130,
                 Dock = DockStyle.Left,
-                BackColor = Color.White
+                BackColor = UiTheme.Surface
             };
             var stateBadge = new Panel
             {
@@ -390,11 +395,11 @@ namespace JeiAudit
                 Height = 52,
                 Left = 16,
                 Top = 16,
-                BackColor = Color.FromArgb(226, 202, 122)
+                BackColor = UiTheme.AccentSoft
             };
             stateBadge.Paint += (_, e) =>
             {
-                using (var pen = new Pen(Color.FromArgb(107, 107, 107), 2))
+                using (var pen = new Pen(UiTheme.Accent, 2))
                 {
                     e.Graphics.DrawRectangle(pen, 16, 15, 24, 18);
                     e.Graphics.DrawLine(pen, 16, 15, 24, 9);
@@ -406,11 +411,11 @@ namespace JeiAudit
             {
                 Parent = stateBadge,
                 Text = "Cerrado",
-                Font = new Font("Segoe UI", 12f, FontStyle.Regular),
+                Font = new Font("Segoe UI", 11f, FontStyle.Bold),
                 AutoSize = true,
                 Left = 52,
                 Top = 15,
-                ForeColor = Color.FromArgb(86, 86, 86)
+                ForeColor = UiTheme.Accent
             };
             return card;
         }
@@ -440,23 +445,24 @@ namespace JeiAudit
             parent.Controls.Add(new Label
             {
                 Text = caption,
-                Font = new Font("Segoe UI", 15f, FontStyle.Regular),
+                Font = new Font("Segoe UI", 12f, FontStyle.Regular),
                 AutoSize = true,
                 Left = 8,
-                Top = top
+                Top = top,
+                ForeColor = UiTheme.TextPrimary
             });
 
             var value = new Label
             {
                 Parent = parent,
                 Text = "-",
-                Font = new Font("Segoe UI", 12f, FontStyle.Regular),
+                Font = new Font("Segoe UI", 10.5f, FontStyle.Regular),
                 AutoSize = false,
                 Left = 106,
                 Top = top + 4,
                 Width = 740,
                 Height = 24,
-                ForeColor = Color.FromArgb(96, 96, 96)
+                ForeColor = UiTheme.TextSecondary
             };
             return value;
         }
@@ -661,13 +667,13 @@ namespace JeiAudit
                         _detailsFlow.Controls.Add(new Label
                         {
                             Text = Attr(section, "SectionName", "(Sin Section)"),
-                            Font = new Font("Segoe UI", 16f, FontStyle.Regular),
-                            ForeColor = Color.FromArgb(67, 67, 67),
+                            Font = new Font("Segoe UI", 12f, FontStyle.Bold),
+                            ForeColor = UiTheme.TextPrimary,
                             AutoSize = false,
                             Width = GetDetailsCardWidth(),
-                            Height = 32,
+                            Height = 28,
                             Margin = new Padding(0, 8, 0, 0),
-                            BackColor = Color.White
+                            BackColor = UiTheme.Surface
                         });
                         RenderChecks(section, includeSectionPrefix: true);
                     }
@@ -706,7 +712,7 @@ namespace JeiAudit
             {
                 Width = width,
                 Height = 70,
-                BackColor = Color.White,
+                BackColor = UiTheme.Surface,
                 Margin = new Padding(0, 0, 0, 6),
                 Tag = "CHECK_CARD"
             };
@@ -717,7 +723,7 @@ namespace JeiAudit
                 Left = 0,
                 Top = 2,
                 AutoSize = true,
-                Font = new Font("Segoe UI", 15f, FontStyle.Regular),
+                Font = new Font("Segoe UI", 11f, FontStyle.Regular),
                 Text = title,
                 Checked = IsTrue(Attr(check, "IsChecked", "True")),
                 Tag = check
@@ -738,8 +744,8 @@ namespace JeiAudit
                 Top = 34,
                 Width = textWidth,
                 Height = Math.Max(20, textSize.Height),
-                Font = new Font("Segoe UI", 12f, FontStyle.Regular),
-                ForeColor = Color.FromArgb(100, 100, 100),
+                Font = new Font("Segoe UI", 10f, FontStyle.Regular),
+                ForeColor = UiTheme.TextSecondary,
                 Text = description
             };
             card.Height = desc.Bottom + 8;

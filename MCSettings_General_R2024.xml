@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <MCSettings AllowRequired="True" Name="PEB EIMI UP Model Checker R2024 (ES) - General" Description="Reglas basadas en PEB EIMI-AITEC-DS-000-ZZZ-PEB-ZZZ-ZZZ-001 - version categorias General">
   <Heading ID="e12a5a01-4d76-4aaf-a931-072c29b42088" HeadingText="PEB_EIMI_UP_GENERAL" Description="Auditoria automatica basada en secciones 4.10.9 y 4.11 del PEB (General)" IsChecked="False">
     <Section ID="de420325-e04a-4ae8-9e29-72b7f59885ee" SectionName="00_Generales_Modelos" Title="" IsChecked="True" Description="PEB 4.11.3: parametros generales obligatorios en categorias General seleccionadas">
@@ -3726,8 +3726,8 @@
         <Filter ID="708730ff-c93f-4f55-a209-7af9752f66dd" Operator="And" Category="Custom" Property="FileNameRegex" Condition="RegexMatch" Value="^EIMI(?:-[A-Z0-9]+){8}(?:[.](RVT|rvt))?$" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
       </Check>
     </Section>
-    <Section ID="80991818-6f50-43ef-865d-a798358f6f1b" SectionName="09_Nomenclatura_Vistas" Title="" IsChecked="True" Description="JeiAudit: validacion de nomenclatura de vistas, leyendas y tablas de planificacion">
-      <Check ID="1f200a08-6a1d-4ef1-aed1-7cd2abb8bf8f" CheckName="JeiAudit_View_Naming" Description="JeiAudit: valida agrupacion del navegador en VISTA_NIVEL 1 (00 WIP, 01 COMPARTIDO, 02 PUBLICADO)" FailureMessage="Hay vistas, leyendas o tablas sin agrupacion valida en VISTA_NIVEL 1 (00 WIP / 01 COMPARTIDO / 02 PUBLICADO)." ResultCondition="FailMatchingElements" CheckType="JeiAuditViewNaming" IsRequired="True" IsChecked="True">
+    <Section ID="80991818-6f50-43ef-865d-a798358f6f1b" SectionName="09_Nomenclatura_Vistas" Title="" IsChecked="False" Description="JeiAudit: validacion de nomenclatura de vistas, leyendas y tablas de planificacion">
+      <Check ID="1f200a08-6a1d-4ef1-aed1-7cd2abb8bf8f" CheckName="JeiAudit_View_Naming" Description="JeiAudit: valida agrupacion del navegador en VISTA_NIVEL 1 (00 WIP, 01 COMPARTIDO, 02 PUBLICADO)" FailureMessage="Hay vistas, leyendas o tablas sin agrupacion valida en VISTA_NIVEL 1 (00 WIP / 01 COMPARTIDO / 02 PUBLICADO)." ResultCondition="FailMatchingElements" CheckType="JeiAuditViewNaming" IsRequired="True" IsChecked="False">
         <Filter ID="cb5efe61-7eac-4fd8-b82a-b68f95173003" Operator="And" Category="Custom" Property="ViewGroupingParameter" Condition="Equal" Value="VISTA_NIVEL 1" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
         <Filter ID="b5fdc9d1-27bb-421e-82d0-b5d536ef1057" Operator="And" Category="Custom" Property="ViewGroupingAllowedValues" Condition="Equal" Value="00 WIP|01 COMPARTIDO|02 PUBLICADO" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
         <Filter ID="e8c1f68a-0d40-4ef0-b7dd-00d8f79e6c50" Operator="And" Category="Custom" Property="ViewGroupingRequireAllValues" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
