@@ -19,6 +19,7 @@
 #define MyAppExeName "JeiAudit.dll"
 #define MyAddinDir "{userappdata}\Autodesk\Revit\Addins\" + MyRevitYear
 #define MyPluginDir "{userappdata}\Autodesk\Revit\Addins\" + MyRevitYear + "\JeiAudit"
+#define MyChecksetsDir "{userappdata}\JeiAudit\Checksets"
 
 [Setup]
 AppId={{9D5D0A6E-5FEA-4E44-B9FD-B3093708D7B5}
@@ -46,18 +47,18 @@ ChangesAssociations=no
 Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 
 [Tasks]
-Name: "copychecksets"; Description: "Copiar checksets base (XML) a Documentos\JeiAudit\Checksets"; Flags: unchecked
+Name: "copychecksets"; Description: "Copiar checksets base (XML) a AppData\Roaming\JeiAudit\Checksets"; Flags: unchecked
 
 [InstallDelete]
 Type: filesandordirs; Name: "{#MyPluginDir}"
 
 [Dirs]
 Name: "{#MyPluginDir}"
-Name: "{userdocs}\JeiAudit\Checksets"; Tasks: copychecksets
+Name: "{#MyChecksetsDir}"; Tasks: copychecksets
 
 [Files]
 Source: "..\src\JeiAudit\bin\{#MyConfiguration}\*"; DestDir: "{#MyPluginDir}"; Excludes: "*.pdb"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "..\..\MCSettings_*_R2024.xml"; DestDir: "{userdocs}\JeiAudit\Checksets"; Flags: ignoreversion; Tasks: copychecksets
+Source: "..\..\MCSettings_*_R2024.xml"; DestDir: "{#MyChecksetsDir}"; Flags: ignoreversion; Tasks: copychecksets
 
 [Icons]
 Name: "{group}\Desinstalar JeiAudit"; Filename: "{uninstallexe}"

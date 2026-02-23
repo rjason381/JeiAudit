@@ -1460,6 +1460,22 @@ namespace JeiAudit
                    item.Section.IndexOf("Nomenclatura_Parametros", StringComparison.OrdinalIgnoreCase) >= 0;
         }
 
+        private static bool IsFileNamingCheck(ModelCheckerSummaryItem item)
+        {
+            return item.Section.IndexOf("Nomenclatura_Archivo", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                   item.CheckName.IndexOf("File_Naming", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                   item.CheckName.IndexOf("Nombre_Archivo", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                   item.CheckName.IndexOf("Model_File_Naming", StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
+        private static bool IsSheetNamingCheck(ModelCheckerSummaryItem item)
+        {
+            return item.Section.IndexOf("Nomenclatura_Planos", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                   item.CheckName.IndexOf("Sheet_Naming", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                   item.CheckName.IndexOf("Nombre_Planos", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                   item.CheckName.IndexOf("Plano_Naming", StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
         private static string TryExtractParameterFromCheckName(string checkName)
         {
             if (string.IsNullOrWhiteSpace(checkName))
@@ -1674,23 +1690,92 @@ namespace JeiAudit
 
         private void ExportPdf()
         {
-            string htmlPath = Path.Combine(_data.OutputFolder, "JeiAudit_Informe_Profesional.html");
-            string pdfPath = Path.Combine(_data.OutputFolder, "JeiAudit_Informe_Profesional.pdf");
-            File.WriteAllText(htmlPath, BuildHtml(), Encoding.UTF8);
-
-            if (TryGeneratePdfFromHtml(htmlPath, pdfPath, out string error))
+            string suggestedName = BuildAuditBaseFileName();
+            using (var dialog = new SaveFileDialog())
             {
-                Process.Start(new ProcessStartInfo(pdfPath) { UseShellExecute = true });
-                return;
+                dialog.Title = "Guardar informe PDF";
+                dialog.Filter = "PDF (*.pdf)|*.pdf";
+                dialog.DefaultExt = "pdf";
+                dialog.AddExtension = true;
+                dialog.OverwritePrompt = true;
+                dialog.FileName = $"{suggestedName}.pdf";
+
+                if (!string.IsNullOrWhiteSpace(_data.OutputFolder) && Directory.Exists(_data.OutputFolder))
+                {
+                    dialog.InitialDirectory = _data.OutputFolder;
+                }
+                else
+                {
+                    string desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                    if (!string.IsNullOrWhiteSpace(desktop) && Directory.Exists(desktop))
+                    {
+                        dialog.InitialDirectory = desktop;
+                    }
+                }
+
+                if (dialog.ShowDialog(this) != DialogResult.OK || string.IsNullOrWhiteSpace(dialog.FileName))
+                {
+                    return;
+                }
+
+                string pdfPath = dialog.FileName;
+                string htmlPath = Path.ChangeExtension(pdfPath, ".html");
+                File.WriteAllText(htmlPath, BuildHtml(), Encoding.UTF8);
+
+                if (TryGeneratePdfFromHtml(htmlPath, pdfPath, out string error))
+                {
+                    Process.Start(new ProcessStartInfo(pdfPath) { UseShellExecute = true });
+                    return;
+                }
+
+                MessageBox.Show(
+                    this,
+                    $"No se pudo generar PDF automatico.{Environment.NewLine}{error}{Environment.NewLine}{Environment.NewLine}Se abrira el HTML para impresion a PDF.",
+                    "JeiAudit",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                Process.Start(new ProcessStartInfo(htmlPath) { UseShellExecute = true });
+            }
+        }
+
+        private string BuildAuditBaseFileName()
+        {
+            string modelName = string.Empty;
+
+            if (!string.IsNullOrWhiteSpace(_data.ModelPath))
+            {
+                modelName = Path.GetFileNameWithoutExtension(_data.ModelPath.Trim());
             }
 
-            MessageBox.Show(
-                this,
-                $"No se pudo generar PDF automatico.{Environment.NewLine}{error}{Environment.NewLine}{Environment.NewLine}Se abrira el HTML para impresion a PDF.",
-                "JeiAudit",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
-            Process.Start(new ProcessStartInfo(htmlPath) { UseShellExecute = true });
+            if (string.IsNullOrWhiteSpace(modelName))
+            {
+                modelName = Fallback(_data.ModelTitle, _data.ChecksetTitle, "JeiAudit");
+            }
+
+            string clean = SanitizeFileName(modelName);
+            if (string.IsNullOrWhiteSpace(clean))
+            {
+                clean = "JeiAudit";
+            }
+
+            return $"{clean}_Informe_Auditoria";
+        }
+
+        private static string SanitizeFileName(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return string.Empty;
+            }
+
+            char[] invalidChars = Path.GetInvalidFileNameChars();
+            var builder = new StringBuilder(input.Length);
+            foreach (char ch in input.Trim())
+            {
+                builder.Append(invalidChars.Contains(ch) ? '_' : ch);
+            }
+
+            return builder.ToString().Trim();
         }
 
         private string BuildHtml()
@@ -1714,10 +1799,23 @@ namespace JeiAudit
                 .OrderBy(v => v.WorksetName, StringComparer.OrdinalIgnoreCase)
                 .Take(60)
                 .ToList();
+            List<ModelCheckerSummaryItem> auditedRows = _data.ModelCheckerSummaryRows
+                .OrderBy(v => v.Heading, StringComparer.OrdinalIgnoreCase)
+                .ThenBy(v => v.Section, StringComparer.OrdinalIgnoreCase)
+                .ThenBy(v => v.CheckName, StringComparer.OrdinalIgnoreCase)
+                .ToList();
             List<ParameterExistenceReportItem> parameterDetailRows = _data.ParameterExistenceRows
                 .OrderBy(v => string.Equals(v.Status, "OK", StringComparison.OrdinalIgnoreCase) ? 1 : 0)
                 .ThenBy(v => v.Parameter, StringComparer.OrdinalIgnoreCase)
                 .Take(300)
+                .ToList();
+            List<ModelCheckerSummaryItem> fileNamingRows = _data.ModelCheckerSummaryRows
+                .Where(IsFileNamingCheck)
+                .OrderBy(v => v.CheckName, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+            List<ModelCheckerSummaryItem> sheetNamingRows = _data.ModelCheckerSummaryRows
+                .Where(IsSheetNamingCheck)
+                .OrderBy(v => v.CheckName, StringComparer.OrdinalIgnoreCase)
                 .ToList();
             int parameterOk = _data.ParameterExistenceRows.Count(v => string.Equals(v.Status, "OK", StringComparison.OrdinalIgnoreCase));
             int parameterMissing = _data.ParameterExistenceRows.Count - parameterOk;
@@ -1812,6 +1910,39 @@ namespace JeiAudit
                 sb.AppendLine($"<td>{row.NotExecutedChecks}</td>");
                 sb.AppendLine($"<td>{row.PassRate}%</td>");
                 sb.AppendLine("</tr>");
+            }
+            sb.AppendLine("</tbody></table>");
+            sb.AppendLine("</div>");
+
+            sb.AppendLine("<div class='section'>");
+            sb.AppendLine("<h2>3.1 Matriz de Checks Auditados (detalle completo)</h2>");
+            sb.AppendLine("<p class='muted'>Se listan todos los controles auditados (PASS/FAIL/no ejecutado) para trazabilidad total.</p>");
+            sb.AppendLine("<table><thead><tr>");
+            sb.AppendLine("<th>Heading</th><th>Seccion</th><th>Regla</th><th>Estado</th><th>Candidatos</th><th>Fail</th><th>Observacion</th>");
+            sb.AppendLine("</tr></thead><tbody>");
+            if (auditedRows.Count == 0)
+            {
+                sb.AppendLine("<tr><td colspan='7'>No hay checks auditados en el resultado cargado.</td></tr>");
+            }
+            else
+            {
+                foreach (ModelCheckerSummaryItem row in auditedRows)
+                {
+                    string css = string.Equals(row.Status, "PASS", StringComparison.OrdinalIgnoreCase)
+                        ? "status-pass"
+                        : string.Equals(row.Status, "FAIL", StringComparison.OrdinalIgnoreCase)
+                            ? "status-fail"
+                            : "status-skip";
+                    sb.AppendLine("<tr>");
+                    sb.AppendLine($"<td>{EscapeHtml(Fallback(row.Heading, "-"))}</td>");
+                    sb.AppendLine($"<td>{EscapeHtml(Fallback(row.Section, "-"))}</td>");
+                    sb.AppendLine($"<td>{EscapeHtml(Fallback(row.CheckName, "-"))}</td>");
+                    sb.AppendLine($"<td class='{css}'>{EscapeHtml(Fallback(row.Status, "-"))}</td>");
+                    sb.AppendLine($"<td>{row.CandidateElements}</td>");
+                    sb.AppendLine($"<td>{row.FailedElements}</td>");
+                    sb.AppendLine($"<td>{EscapeHtml(Fallback(row.Reason, row.CheckDescription, "-"))}</td>");
+                    sb.AppendLine("</tr>");
+                }
             }
             sb.AppendLine("</tbody></table>");
             sb.AppendLine("</div>");
@@ -1966,6 +2097,60 @@ namespace JeiAudit
                 }
             }
             sb.AppendLine("</tbody></table>");
+
+            sb.AppendLine("<h3>7.3 Nomenclatura de archivo (MIDP)</h3>");
+            sb.AppendLine("<table><thead><tr><th>Regla</th><th>Estado</th><th>Candidatos</th><th>Fail</th><th>Observacion</th></tr></thead><tbody>");
+            if (fileNamingRows.Count == 0)
+            {
+                sb.AppendLine("<tr><td colspan='5'>No se encontraron checks de nomenclatura de archivo en el resultado cargado.</td></tr>");
+            }
+            else
+            {
+                foreach (ModelCheckerSummaryItem row in fileNamingRows)
+                {
+                    string css = string.Equals(row.Status, "PASS", StringComparison.OrdinalIgnoreCase)
+                        ? "status-pass"
+                        : string.Equals(row.Status, "FAIL", StringComparison.OrdinalIgnoreCase)
+                            ? "status-fail"
+                            : "status-skip";
+                    string note = Fallback(row.Reason, row.CheckDescription, "-");
+                    sb.AppendLine("<tr>");
+                    sb.AppendLine($"<td>{EscapeHtml(row.CheckName)}</td>");
+                    sb.AppendLine($"<td class='{css}'>{EscapeHtml(row.Status)}</td>");
+                    sb.AppendLine($"<td>{row.CandidateElements}</td>");
+                    sb.AppendLine($"<td>{row.FailedElements}</td>");
+                    sb.AppendLine($"<td>{EscapeHtml(note)}</td>");
+                    sb.AppendLine("</tr>");
+                }
+            }
+            sb.AppendLine("</tbody></table>");
+
+            sb.AppendLine("<h3>7.4 Nomenclatura de planos</h3>");
+            sb.AppendLine("<table><thead><tr><th>Regla</th><th>Estado</th><th>Candidatos</th><th>Fail</th><th>Observacion</th></tr></thead><tbody>");
+            if (sheetNamingRows.Count == 0)
+            {
+                sb.AppendLine("<tr><td colspan='5'>No se encontraron checks de nomenclatura de planos en el resultado cargado.</td></tr>");
+            }
+            else
+            {
+                foreach (ModelCheckerSummaryItem row in sheetNamingRows)
+                {
+                    string css = string.Equals(row.Status, "PASS", StringComparison.OrdinalIgnoreCase)
+                        ? "status-pass"
+                        : string.Equals(row.Status, "FAIL", StringComparison.OrdinalIgnoreCase)
+                            ? "status-fail"
+                            : "status-skip";
+                    string note = Fallback(row.Reason, row.CheckDescription, "-");
+                    sb.AppendLine("<tr>");
+                    sb.AppendLine($"<td>{EscapeHtml(row.CheckName)}</td>");
+                    sb.AppendLine($"<td class='{css}'>{EscapeHtml(row.Status)}</td>");
+                    sb.AppendLine($"<td>{row.CandidateElements}</td>");
+                    sb.AppendLine($"<td>{row.FailedElements}</td>");
+                    sb.AppendLine($"<td>{EscapeHtml(note)}</td>");
+                    sb.AppendLine("</tr>");
+                }
+            }
+            sb.AppendLine("</tbody></table>");
             sb.AppendLine("</div>");
 
             sb.AppendLine("<div class='section'>");
@@ -2019,10 +2204,23 @@ namespace JeiAudit
                 .OrderBy(v => v.WorksetName, StringComparer.OrdinalIgnoreCase)
                 .Take(60)
                 .ToList();
+            List<ModelCheckerSummaryItem> auditedRows = _data.ModelCheckerSummaryRows
+                .OrderBy(v => v.Heading, StringComparer.OrdinalIgnoreCase)
+                .ThenBy(v => v.Section, StringComparer.OrdinalIgnoreCase)
+                .ThenBy(v => v.CheckName, StringComparer.OrdinalIgnoreCase)
+                .ToList();
             List<ParameterExistenceReportItem> parameterDetailRows = _data.ParameterExistenceRows
                 .OrderBy(v => string.Equals(v.Status, "OK", StringComparison.OrdinalIgnoreCase) ? 1 : 0)
                 .ThenBy(v => v.Parameter, StringComparer.OrdinalIgnoreCase)
                 .Take(300)
+                .ToList();
+            List<ModelCheckerSummaryItem> fileNamingRows = _data.ModelCheckerSummaryRows
+                .Where(IsFileNamingCheck)
+                .OrderBy(v => v.CheckName, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+            List<ModelCheckerSummaryItem> sheetNamingRows = _data.ModelCheckerSummaryRows
+                .Where(IsSheetNamingCheck)
+                .OrderBy(v => v.CheckName, StringComparer.OrdinalIgnoreCase)
                 .ToList();
             int parameterOk = _data.ParameterExistenceRows.Count(v => string.Equals(v.Status, "OK", StringComparison.OrdinalIgnoreCase));
             int parameterMissing = _data.ParameterExistenceRows.Count - parameterOk;
@@ -2078,6 +2276,28 @@ namespace JeiAudit
                         v.NotExecutedChecks.ToString(CultureInfo.InvariantCulture),
                         v.PassRate.ToString(CultureInfo.InvariantCulture) + "%"
                     })));
+                body.Append(CreateWordParagraph(string.Empty));
+
+                body.Append(CreateWordParagraph("3.1 Matriz de Checks Auditados (detalle completo)", bold: true, sizeHalfPoints: 30));
+                if (auditedRows.Count == 0)
+                {
+                    body.Append(CreateWordParagraph("No hay checks auditados en el resultado cargado."));
+                }
+                else
+                {
+                    body.Append(CreateWordTable(
+                        new[] { "Heading", "Seccion", "Regla", "Estado", "Candidatos", "Fail", "Observacion" },
+                        auditedRows.Select(v => new[]
+                        {
+                            Fallback(v.Heading, "-"),
+                            Fallback(v.Section, "-"),
+                            Fallback(v.CheckName, "-"),
+                            Fallback(v.Status, "-"),
+                            v.CandidateElements.ToString(CultureInfo.InvariantCulture),
+                            v.FailedElements.ToString(CultureInfo.InvariantCulture),
+                            Fallback(v.Reason, v.CheckDescription, "-")
+                        })));
+                }
                 body.Append(CreateWordParagraph(string.Empty));
 
                 body.Append(CreateWordParagraph("4. Hallazgos Criticos Priorizados", bold: true, sizeHalfPoints: 30));
@@ -2190,6 +2410,46 @@ namespace JeiAudit
                     body.Append(CreateWordTable(
                         new[] { "Subproyecto", "Estado", "Motivo" },
                         subprojectAlerts.Select(v => new[] { v.WorksetName, v.Status, v.Reason })));
+                }
+                body.Append(CreateWordParagraph(string.Empty));
+
+                body.Append(CreateWordParagraph("7.3 Nomenclatura de archivo (MIDP)", bold: true, sizeHalfPoints: 24));
+                if (fileNamingRows.Count == 0)
+                {
+                    body.Append(CreateWordParagraph("No se encontraron checks de nomenclatura de archivo en el resultado cargado."));
+                }
+                else
+                {
+                    body.Append(CreateWordTable(
+                        new[] { "Regla", "Estado", "Candidatos", "Fail", "Observacion" },
+                        fileNamingRows.Select(v => new[]
+                        {
+                            Fallback(v.CheckName, "-"),
+                            Fallback(v.Status, "-"),
+                            v.CandidateElements.ToString(CultureInfo.InvariantCulture),
+                            v.FailedElements.ToString(CultureInfo.InvariantCulture),
+                            Fallback(v.Reason, v.CheckDescription, "-")
+                        })));
+                }
+                body.Append(CreateWordParagraph(string.Empty));
+
+                body.Append(CreateWordParagraph("7.4 Nomenclatura de planos", bold: true, sizeHalfPoints: 24));
+                if (sheetNamingRows.Count == 0)
+                {
+                    body.Append(CreateWordParagraph("No se encontraron checks de nomenclatura de planos en el resultado cargado."));
+                }
+                else
+                {
+                    body.Append(CreateWordTable(
+                        new[] { "Regla", "Estado", "Candidatos", "Fail", "Observacion" },
+                        sheetNamingRows.Select(v => new[]
+                        {
+                            Fallback(v.CheckName, "-"),
+                            Fallback(v.Status, "-"),
+                            v.CandidateElements.ToString(CultureInfo.InvariantCulture),
+                            v.FailedElements.ToString(CultureInfo.InvariantCulture),
+                            Fallback(v.Reason, v.CheckDescription, "-")
+                        })));
                 }
                 body.Append(CreateWordParagraph(string.Empty));
 

@@ -412,6 +412,10 @@ namespace JeiAudit
 
                 return Result.Succeeded;
             }
+            catch (OperationCanceledException)
+            {
+                return Result.Cancelled;
+            }
             catch (Exception ex)
             {
                 message = ex.Message;
@@ -422,10 +426,58 @@ namespace JeiAudit
 
         private static string PrepareOutputFolder()
         {
+            string initialDirectory = ResolveInitialOutputDirectory();
+            using (var dialog = new WinForms.FolderBrowserDialog())
+            {
+                dialog.Description = "Selecciona donde guardar los reportes de JeiAudit.";
+                dialog.ShowNewFolderButton = true;
+                if (!string.IsNullOrWhiteSpace(initialDirectory) && Directory.Exists(initialDirectory))
+                {
+                    dialog.SelectedPath = initialDirectory;
+                }
+
+                WinForms.DialogResult result = dialog.ShowDialog();
+                if (result != WinForms.DialogResult.OK || string.IsNullOrWhiteSpace(dialog.SelectedPath))
+                {
+                    throw new OperationCanceledException("Audit cancelled by user.");
+                }
+
+                string rootFolder = dialog.SelectedPath.Trim();
+                string folder = Path.Combine(rootFolder, $"JeiAudit_{DateTime.Now:yyyyMMdd_HHmmss}");
+                Directory.CreateDirectory(folder);
+                return folder;
+            }
+        }
+
+        private static string ResolveInitialOutputDirectory()
+        {
+            string lastOutputFolder = PluginState.LoadLastOutputFolder();
+            if (!string.IsNullOrWhiteSpace(lastOutputFolder) && Directory.Exists(lastOutputFolder))
+            {
+                try
+                {
+                    var info = new DirectoryInfo(lastOutputFolder);
+                    if (info.Name.StartsWith("JeiAudit_", StringComparison.OrdinalIgnoreCase) && info.Parent != null)
+                    {
+                        return info.Parent.FullName;
+                    }
+
+                    return info.FullName;
+                }
+                catch
+                {
+                    // Ignore and fallback below.
+                }
+            }
+
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            string folder = Path.Combine(desktop, $"JeiAudit_{DateTime.Now:yyyyMMdd_HHmmss}");
-            Directory.CreateDirectory(folder);
-            return folder;
+            if (!string.IsNullOrWhiteSpace(desktop) && Directory.Exists(desktop))
+            {
+                return desktop;
+            }
+
+            string documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            return string.IsNullOrWhiteSpace(documents) ? string.Empty : documents;
         }
 
         private static string ResolveModelCheckerXmlPathForRun(Document doc)
