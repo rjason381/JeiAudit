@@ -1,0 +1,3690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MCSettings AllowRequired="True" Name="PEB EIMI UP Model Checker R2024 (ES)" Description="Reglas basadas en PEB EIMI-AITEC-DS-000-ZZZ-PEB-ZZZ-ZZZ-001 - version categorias ES">
+  
+  
+  
+  
+  
+  
+  <Heading ID="e12a5a01-4d76-4aaf-a931-072c29b42088" HeadingText="PEB_EIMI_UP" Description="Auditoria automatica basada en secciones 4.10.9 y 4.11 del PEB" IsChecked="True">
+    
+    
+    
+    
+    
+    
+    <Section ID="de420325-e04a-4ae8-9e29-72b7f59885ee" SectionName="00_Generales_Modelos" Title="" IsChecked="True" Description="PEB 4.11.3 y 4.10.9: parametros generales obligatorios para control de calidad">
+      
+      
+      
+      
+      
+      
+      <Check ID="548ea62d-dadf-4d03-8b9e-6eb7b45dd086" CheckName="Muros_ARG_SECTOR_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_SECTOR' sin valor en categoria 'Muros'" FailureMessage="Hay elementos en 'Muros' con 'ARG_SECTOR' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="2f6302e0-496f-469d-967c-186294d7165f" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="a2879249-1a2d-4555-a015-4a0f3d96cca6" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="30aa1ccd-1b5d-4706-97d6-8aae6cf39f57" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="18f5c81d-837e-4edf-b7c7-c882f77b6c3d" CheckName="Muros_ARG_NIVEL_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_NIVEL' sin valor en categoria 'Muros'" FailureMessage="Hay elementos en 'Muros' con 'ARG_NIVEL' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="49be0357-062f-4d02-b85b-b2d428e0b554" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="e85557b8-2b9f-49a0-b09a-04eae361fa61" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="5811c4e5-6e48-4d12-9cf2-1281d913447d" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="771527ff-e431-4327-b6a7-d008b2cc2dac" CheckName="Muros_ARG_SISTEMA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_SISTEMA' sin valor en categoria 'Muros'" FailureMessage="Hay elementos en 'Muros' con 'ARG_SISTEMA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="7c973fd9-da9a-4c64-a827-030ffdddda81" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="d615523a-2b51-471f-9b5c-c92379faf78c" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="563db9f9-1848-4324-983a-4de7b0c2ce01" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="8defa8ea-a87c-46b9-accb-cec6d63eee4b" CheckName="Muros_Grupo_NoValue" Description="PEB 4.11.3: parametro obligatorio 'Grupo' sin valor en categoria 'Muros'" FailureMessage="Hay elementos en 'Muros' con 'Grupo' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="c4e09986-e3ba-4f9f-8181-af22b5aca197" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="f328937f-9aaa-4224-8161-bae012de72f2" Operator="And" Category="Parameter" Property="Grupo" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="3f61bccd-2d7f-4e9a-b3c1-74c64a4dd6df" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="fc1cea8f-3bfc-4770-9495-ae1a23041162" CheckName="Muros_Especialidad_NoValue" Description="PEB 4.11.3: parametro obligatorio 'Especialidad' sin valor en categoria 'Muros'" FailureMessage="Hay elementos en 'Muros' con 'Especialidad' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="9bc12f0a-b193-4d14-b720-d9016a3ba807" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="4f4a283b-1cd9-47f4-8710-dbfee0330454" Operator="And" Category="Parameter" Property="Especialidad" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="0df6212e-982a-4c5a-8fc8-4fd388826205" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="49908af4-360d-455a-9004-386acd7f319e" CheckName="Puertas_ARG_SECTOR_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_SECTOR' sin valor en categoria 'Puertas'" FailureMessage="Hay elementos en 'Puertas' con 'ARG_SECTOR' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="e5c1595a-e9f8-4232-8f1d-abf968e2b33f" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="8f905d3c-9490-4a44-ab73-176803f37dd2" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="088e5cbe-9bb8-416d-a527-c34459d32c4d" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="4b61bc51-bd3f-4e19-9337-0b6eb4086e5c" CheckName="Puertas_ARG_NIVEL_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_NIVEL' sin valor en categoria 'Puertas'" FailureMessage="Hay elementos en 'Puertas' con 'ARG_NIVEL' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="dd670ac5-5b46-44f4-b47b-862e5f9574e7" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="ee36a987-2b22-42c7-b976-38a079a509cc" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="148fb736-952d-4298-88eb-6d847e04806d" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="4f8e765e-469f-4136-a91b-b26e59acd3f6" CheckName="Puertas_ARG_SISTEMA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_SISTEMA' sin valor en categoria 'Puertas'" FailureMessage="Hay elementos en 'Puertas' con 'ARG_SISTEMA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="df394435-d285-4e61-93bb-3d82a65e715a" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="64650084-a6e8-4dc4-b12e-e1519e312947" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="9324e26f-303a-4a49-b4dc-2d95c0c3ec7f" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="67eac004-c7a5-4558-9bac-27258c9e1075" CheckName="Puertas_Grupo_NoValue" Description="PEB 4.11.3: parametro obligatorio 'Grupo' sin valor en categoria 'Puertas'" FailureMessage="Hay elementos en 'Puertas' con 'Grupo' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="09936e88-498f-4a78-951d-a35b28d48ef1" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="7eb830ee-3794-41f9-b0e1-da1d89c8fc47" Operator="And" Category="Parameter" Property="Grupo" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="5fda36e1-2964-40b0-a391-06cd5c80b40b" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="807acd6e-3f47-4c4d-a7c4-b017e3b27aa7" CheckName="Puertas_Especialidad_NoValue" Description="PEB 4.11.3: parametro obligatorio 'Especialidad' sin valor en categoria 'Puertas'" FailureMessage="Hay elementos en 'Puertas' con 'Especialidad' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="35db1f0d-12a9-445f-a5b3-6f9760fd094f" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="0f338db6-ce2a-44db-bad9-5d4b39fbc14b" Operator="And" Category="Parameter" Property="Especialidad" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="8b396f9c-26d2-4e53-90a3-ecda1ac4bb0f" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="d05ff49e-7ccf-4cb8-8faa-52c63e85db5a" CheckName="Ventanas_ARG_SECTOR_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_SECTOR' sin valor en categoria 'Ventanas'" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_SECTOR' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="7f03f807-f5a7-43d8-9795-9d3508af8e9f" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="32f99f8b-afd1-413c-b94d-3309ea45935d" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="4336b6e2-90b9-4e07-8d30-88145a69a1be" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="3deef3ee-90d8-4f18-88ad-9c6abee2f1e6" CheckName="Ventanas_ARG_NIVEL_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_NIVEL' sin valor en categoria 'Ventanas'" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_NIVEL' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="cc65a365-f282-4223-a77b-847e184963cb" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="b12d8309-9833-4cd2-a9f6-b819d00b19d6" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="aea0a3c4-7d06-4f58-9d90-c5c16d40e783" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="2bfecfbe-8639-4324-aedc-28d389fed74d" CheckName="Ventanas_ARG_SISTEMA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_SISTEMA' sin valor en categoria 'Ventanas'" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_SISTEMA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="9cad76cb-6a80-4789-91c2-f3be3065af63" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="001dc759-7d4e-49a5-8efd-be94bdd20a63" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="ec05ddcf-9b25-4146-821d-56e192db87b2" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="657106a8-04cf-4f5a-8b7b-6437f7f2813c" CheckName="Ventanas_Grupo_NoValue" Description="PEB 4.11.3: parametro obligatorio 'Grupo' sin valor en categoria 'Ventanas'" FailureMessage="Hay elementos en 'Ventanas' con 'Grupo' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="08b6c3b7-faa9-4c12-8bae-b3daa3ac1b97" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="b70c0993-7205-4568-a078-1059fcc9703e" Operator="And" Category="Parameter" Property="Grupo" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="440502c8-1275-40cb-b62d-3086d9fe340d" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="bbf07282-82d1-4bfe-af13-e6a37ecc0aab" CheckName="Ventanas_Especialidad_NoValue" Description="PEB 4.11.3: parametro obligatorio 'Especialidad' sin valor en categoria 'Ventanas'" FailureMessage="Hay elementos en 'Ventanas' con 'Especialidad' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="458a85bd-bfc7-4fd1-a900-71c06df2bd63" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="53f98854-2209-452e-9667-41ee46e139aa" Operator="And" Category="Parameter" Property="Especialidad" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="069495cb-cd9a-42cf-a2f6-964cdd6ad833" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="c4c92b7f-347b-402e-bcdd-28ab168e533f" CheckName="Suelos_ARG_SECTOR_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_SECTOR' sin valor en categoria 'Suelos'" FailureMessage="Hay elementos en 'Suelos' con 'ARG_SECTOR' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="3b894caa-2be4-4ee2-9523-9128f97cec02" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="b1ae7823-0ed1-48d7-9cae-07fb25932c66" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="ed4b70c4-9faa-412f-a3c0-154c816082f2" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="b042b812-b621-449c-ae33-198eebeaadf9" CheckName="Suelos_ARG_NIVEL_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_NIVEL' sin valor en categoria 'Suelos'" FailureMessage="Hay elementos en 'Suelos' con 'ARG_NIVEL' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="61de10af-1f2e-4ac3-ac83-50ab90027d80" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="5bcc8306-99cd-4b9f-b42b-2402a5f109f9" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="5cd8b5a8-0bac-4ef2-886d-f65ded221f77" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="69607530-4502-4063-b7ee-dd04f5026e58" CheckName="Suelos_ARG_SISTEMA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_SISTEMA' sin valor en categoria 'Suelos'" FailureMessage="Hay elementos en 'Suelos' con 'ARG_SISTEMA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="5ca8b32c-6f07-478d-9d96-7f35727c9e51" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="9780b9cc-a86f-447a-a845-ec7ca8ebc44b" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="f1592df5-34fb-4e92-945d-ac04f9d98cc9" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="b3255c8f-ed0d-493c-a0a1-1fc9cb37c266" CheckName="Suelos_Grupo_NoValue" Description="PEB 4.11.3: parametro obligatorio 'Grupo' sin valor en categoria 'Suelos'" FailureMessage="Hay elementos en 'Suelos' con 'Grupo' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="03f47bc4-c6ca-4666-8f6f-e0ad223adc99" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="172f366d-67ec-4dd3-97f7-2e3c81ddd144" Operator="And" Category="Parameter" Property="Grupo" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="982f0d5a-990f-4370-a5cf-470a2f3bcf7c" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="59610434-d611-4cdc-8ff0-27b306b9f3a7" CheckName="Suelos_Especialidad_NoValue" Description="PEB 4.11.3: parametro obligatorio 'Especialidad' sin valor en categoria 'Suelos'" FailureMessage="Hay elementos en 'Suelos' con 'Especialidad' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="d4438ddd-47f3-4288-bcfc-e2b734828b9a" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="f0c67647-b36e-47fc-923f-0d9d3f2ed721" Operator="And" Category="Parameter" Property="Especialidad" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="3e4b84f5-a7f2-43f4-bad8-38c7260dc25c" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="edf63f8f-554d-4c72-9fa1-13621e4c877a" CheckName="Habitaciones_ARG_SECTOR_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_SECTOR' sin valor en categoria 'Habitaciones'" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_SECTOR' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="4536468c-e2e1-4788-97ed-194a9cd789a7" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="602a48ef-8582-4b05-9986-b1066bda454e" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="b944065d-b9bb-4963-9b47-81e79f5fa49a" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="d0c449ee-4369-4eac-8a57-2cf9d69d84d5" CheckName="Habitaciones_ARG_NIVEL_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_NIVEL' sin valor en categoria 'Habitaciones'" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_NIVEL' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="3cee0848-2080-43fe-b66e-c59af42608f3" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="8740cc4d-3573-4d30-a00b-5ed3ab5586c6" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="3d44bceb-50ad-4bbc-8003-34f30314699b" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="22339282-8589-411e-93cb-cc183a5e354a" CheckName="Habitaciones_ARG_SISTEMA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_SISTEMA' sin valor en categoria 'Habitaciones'" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_SISTEMA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="4e2f73f8-e8d8-4be6-8f7d-2339af590dd8" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="aa59d0f2-68ff-46b5-a0d4-cdf5e0f7ea77" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="e30cdf1e-18e7-40c9-8677-1d0be25ebc28" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="7d90b842-deb2-4b9f-8bd2-597f1c9c4f41" CheckName="Habitaciones_Grupo_NoValue" Description="PEB 4.11.3: parametro obligatorio 'Grupo' sin valor en categoria 'Habitaciones'" FailureMessage="Hay elementos en 'Habitaciones' con 'Grupo' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="f38c0fb7-f562-4ad0-9c0e-e5339910e75d" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="1809ca71-db21-4567-9e84-1fd199cc2e56" Operator="And" Category="Parameter" Property="Grupo" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="f1d39bb4-d243-4ed4-b6f4-cbe56b709bb5" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="75405847-7a5c-4a31-aafa-1e33421bfafb" CheckName="Habitaciones_Especialidad_NoValue" Description="PEB 4.11.3: parametro obligatorio 'Especialidad' sin valor en categoria 'Habitaciones'" FailureMessage="Hay elementos en 'Habitaciones' con 'Especialidad' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="38903218-33dd-4c5e-844e-c2fc8af75467" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="19422088-6969-465b-94cf-d9ca285fdf47" Operator="And" Category="Parameter" Property="Especialidad" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="08defbcd-0c86-4390-84b4-472bfd910e85" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+    
+    
+    
+    </Section>
+    
+    
+    
+    
+    
+    
+    <Section ID="849c2498-4bd7-4690-9941-f9b765fc2e45" SectionName="03_Metrados_Modelos" Title="" IsChecked="True" Description="PEB 4.11.3: parametros de metrados y Uniformat obligatorios">
+      
+      
+      
+      
+      
+      
+      <Check ID="244303a4-1d9c-4416-b643-e67133beae74" CheckName="Muros_ARG_UNIFORMAT_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_UNIFORMAT' sin valor en categoria 'Muros'" FailureMessage="Hay elementos en 'Muros' con 'ARG_UNIFORMAT' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="52e912b1-338a-44b0-ad1a-a87d5fe14702" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="f28773fb-0e75-4fd2-89a1-af638e7142d4" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="bec51b58-8cc9-493a-a4ca-3185bd198fd9" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="7281c36b-f774-4a7e-8be8-47d2bfcc09de" CheckName="Muros_ARG_CODIGO_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_CODIGO DE PARTIDA' sin valor en categoria 'Muros'" FailureMessage="Hay elementos en 'Muros' con 'ARG_CODIGO DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="aefd0822-3263-4a83-b508-2879e8eb9f9c" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="1e0b927d-fac5-4063-bbf5-c230dbf94029" Operator="And" Category="Parameter" Property="ARG_CODIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="1dce4fc3-c1de-401e-a69e-c9f2683b3317" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="ebb6e700-003d-466d-bc12-0fe7093e08cb" CheckName="Muros_ARG_UNIDAD_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_UNIDAD DE PARTIDA' sin valor en categoria 'Muros'" FailureMessage="Hay elementos en 'Muros' con 'ARG_UNIDAD DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="f1dd8d08-d915-490a-ad86-4a363fe8ff5f" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="96757207-9746-4e3b-b5eb-d0db740b4bbf" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="deb46d0d-2ba9-4042-bf9b-eee3de99e0e3" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="222775ee-49b7-47df-8d38-41278375a11f" CheckName="Muros_ARG_DESCRIPCION_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_DESCRIPCION DE PARTIDA' sin valor en categoria 'Muros'" FailureMessage="Hay elementos en 'Muros' con 'ARG_DESCRIPCION DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="5fd6db38-8055-40ba-b649-d0496d9a71f2" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="62a55496-9722-43a5-a665-135bf2bd1bb0" Operator="And" Category="Parameter" Property="ARG_DESCRIPCION DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="e447e0e1-49c0-49a7-82a8-87bccd812375" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="ad91dd6b-dac3-48db-9ba6-692ef6e76941" CheckName="Puertas_ARG_UNIFORMAT_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_UNIFORMAT' sin valor en categoria 'Puertas'" FailureMessage="Hay elementos en 'Puertas' con 'ARG_UNIFORMAT' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="d0ae5c96-019b-41b7-97b7-2e26470b6829" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="5b8dfc93-f634-471e-9354-7f888715a202" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="6ae7fd44-5606-4d70-83fb-da508834bc52" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="e7c89ed3-0f4c-4722-843f-6b04412a1d0c" CheckName="Puertas_ARG_CODIGO_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_CODIGO DE PARTIDA' sin valor en categoria 'Puertas'" FailureMessage="Hay elementos en 'Puertas' con 'ARG_CODIGO DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="b84f0d37-ae50-4028-a263-cdb2885907ac" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="7d54d7d9-d37e-47fb-8649-1285a5f9ee90" Operator="And" Category="Parameter" Property="ARG_CODIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="cb63a93d-4e36-4329-b279-c0f1cda971a9" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="357d37c8-02f7-48ac-888d-ea3c86ee7bb0" CheckName="Puertas_ARG_UNIDAD_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_UNIDAD DE PARTIDA' sin valor en categoria 'Puertas'" FailureMessage="Hay elementos en 'Puertas' con 'ARG_UNIDAD DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="4979bc47-6446-4380-af71-049182eb7595" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="935b4398-6c78-4adc-9f5f-49129571c2cb" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="67dc69dd-9af6-4085-aa74-85c30a1ef339" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="e01a8ef4-3b21-4bf4-9eaa-e3c09a1f3bc1" CheckName="Puertas_ARG_DESCRIPCION_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_DESCRIPCION DE PARTIDA' sin valor en categoria 'Puertas'" FailureMessage="Hay elementos en 'Puertas' con 'ARG_DESCRIPCION DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="2a639363-9c96-4378-b9f5-e8da04286c62" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="5ac5b306-446f-4dcf-bb05-58908e2a603f" Operator="And" Category="Parameter" Property="ARG_DESCRIPCION DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="f46be30f-d653-4d88-9466-9cd9d4bf68c3" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="a830d926-8eca-42d4-ab98-1b0b8614efc9" CheckName="Ventanas_ARG_UNIFORMAT_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_UNIFORMAT' sin valor en categoria 'Ventanas'" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_UNIFORMAT' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="b4a6897d-d0b1-420a-9281-04fd06b95c1c" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="81919c06-2f75-4274-b1ff-e506184d27f6" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="8a073a2f-49de-4af9-a294-b86e8ee534b5" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="b477a020-40c6-448b-8a56-7810b2a969d8" CheckName="Ventanas_ARG_CODIGO_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_CODIGO DE PARTIDA' sin valor en categoria 'Ventanas'" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_CODIGO DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="f2e9d3d7-59ea-4d21-9bec-3b06f71ce23d" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="03340297-c9c6-4864-9b02-909b3797f661" Operator="And" Category="Parameter" Property="ARG_CODIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="5bcdc7f8-2949-4a23-b472-4e85c124c09d" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="c5625cd1-0b89-4bfe-9890-34459a55eeb7" CheckName="Ventanas_ARG_UNIDAD_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_UNIDAD DE PARTIDA' sin valor en categoria 'Ventanas'" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_UNIDAD DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="1b8368ce-ddbb-46cb-b0a3-8e20257b4318" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="7e82c00d-a982-472b-b644-34a249b5f6d1" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="21a06c9b-c246-4b16-9707-8521ee84e9cb" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="5f34d6a3-bea8-49c5-839c-b84743127c70" CheckName="Ventanas_ARG_DESCRIPCION_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_DESCRIPCION DE PARTIDA' sin valor en categoria 'Ventanas'" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_DESCRIPCION DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="3d7549ad-e5e6-4548-8bae-968f5e2f7a72" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="86040be4-6d8e-429e-86f5-86a1df683726" Operator="And" Category="Parameter" Property="ARG_DESCRIPCION DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="1c42991d-7f68-4235-ada9-8c76b94f3342" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="b39bcb62-0bb0-4d97-99fb-9c95081d297a" CheckName="Suelos_ARG_UNIFORMAT_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_UNIFORMAT' sin valor en categoria 'Suelos'" FailureMessage="Hay elementos en 'Suelos' con 'ARG_UNIFORMAT' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="d6aa695a-aa73-4650-9d7e-179bd4282c6a" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="708abe48-cd28-4e0a-8d74-5186f0f95302" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="04f58154-0985-406a-9e0a-6d930314fbb7" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="9088c1ae-110c-4d68-afd3-c27efcb8eed3" CheckName="Suelos_ARG_CODIGO_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_CODIGO DE PARTIDA' sin valor en categoria 'Suelos'" FailureMessage="Hay elementos en 'Suelos' con 'ARG_CODIGO DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="3c22b18a-c5fe-4557-810b-73a967f3946c" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="2ba213d9-313c-4fff-8086-e901824d9c78" Operator="And" Category="Parameter" Property="ARG_CODIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="03da23f9-a0e0-4e55-a3be-17cdc84354f4" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="19523961-6b24-4434-8a08-f7087fecce55" CheckName="Suelos_ARG_UNIDAD_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_UNIDAD DE PARTIDA' sin valor en categoria 'Suelos'" FailureMessage="Hay elementos en 'Suelos' con 'ARG_UNIDAD DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="266f27d0-d073-45c9-9d09-724e3fa306be" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="1ec67e6e-81ca-427d-b6e2-363aab34fa9c" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="50c10bfc-d0c4-4771-b684-446d628618b4" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="0a909b68-7505-4a45-8ee2-c7b6efc5c47a" CheckName="Suelos_ARG_DESCRIPCION_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_DESCRIPCION DE PARTIDA' sin valor en categoria 'Suelos'" FailureMessage="Hay elementos en 'Suelos' con 'ARG_DESCRIPCION DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="00ae10b8-cfdd-4033-b006-e7b648f1ff71" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="e8ea53a6-9cd0-45cb-8ad4-4b7e5d74ced5" Operator="And" Category="Parameter" Property="ARG_DESCRIPCION DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="5cfefeec-6607-4158-9559-81a523a26832" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="06946f96-aa6b-4694-9c51-1dacb420828c" CheckName="Habitaciones_ARG_UNIFORMAT_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_UNIFORMAT' sin valor en categoria 'Habitaciones'" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_UNIFORMAT' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="9b1e2f0f-6ba3-497c-bdc1-3a18fdc9018d" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="f0950551-f37c-4246-b076-6c6891b71950" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="0d825b97-e7de-4f3b-a219-7c4d4ec9a45d" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="5754fcfc-276a-4f6c-be2d-0aa15dd2afff" CheckName="Habitaciones_ARG_CODIGO_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_CODIGO DE PARTIDA' sin valor en categoria 'Habitaciones'" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_CODIGO DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="e338faaa-a511-4a81-a3ad-078ad6de8199" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="9df4d6b4-e5c4-46e3-ad32-c19af58418cd" Operator="And" Category="Parameter" Property="ARG_CODIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="67eeef9c-58b6-4b37-8284-a2314ddbd838" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="523d9422-194c-4cb4-9cbc-0ae9089bb4c4" CheckName="Habitaciones_ARG_UNIDAD_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_UNIDAD DE PARTIDA' sin valor en categoria 'Habitaciones'" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_UNIDAD DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="bff22221-35e2-442f-8b81-1dabf0a223c7" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="7ed06f51-8759-49dd-8a63-d53ad0d4b284" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="e31811d1-fe47-41b9-b892-e6a56ac0e08e" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="4200849d-2a46-4382-befe-436345822eaf" CheckName="Habitaciones_ARG_DESCRIPCION_DE_PARTIDA_NoValue" Description="PEB 4.11.3: parametro obligatorio 'ARG_DESCRIPCION DE PARTIDA' sin valor en categoria 'Habitaciones'" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_DESCRIPCION DE PARTIDA' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="1f44d504-b755-4228-8916-69868da3fa8b" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="3a5e12cc-f6cd-42c5-9ba7-f7b388f9f365" Operator="And" Category="Parameter" Property="ARG_DESCRIPCION DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="c74feeee-2c53-4aa2-8747-37b7e7b2712c" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+    
+    
+    
+    </Section>
+    
+    
+    
+    
+    
+    
+    <Section ID="03138bcb-efef-4b61-9b12-3e9d55c21f54" SectionName="01_Habitaciones_Base" Title="" IsChecked="True" Description="PEB 4.10.9: organizacion y consistencia minima de ambientes">
+      
+      
+      
+      
+      
+      
+      <Check ID="63f5d2cb-d351-49dc-99ca-393045096915" CheckName="Habitaciones_Numero_NoValue" Description="PEB 4.10.9: parametro obligatorio 'Numero' sin valor en categoria 'Habitaciones'" FailureMessage="Hay elementos en 'Habitaciones' con 'Numero' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="f584953c-4ff3-4d69-8452-0a40bd3095e8" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="0d9ea0ec-da60-4900-af6d-91ff3e21c987" Operator="And" Category="Parameter" Property="Numero" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="e85c2698-e0d2-4aa6-bb8b-b78412ea383f" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+      
+      
+      
+      <Check ID="deab1a66-b7f1-480d-b5a4-7ef52d3bfe10" CheckName="Habitaciones_Nombre_NoValue" Description="PEB 4.10.9: parametro obligatorio 'Nombre' sin valor en categoria 'Habitaciones'" FailureMessage="Hay elementos en 'Habitaciones' con 'Nombre' sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        
+        
+        <Filter ID="6a2fd042-69c8-40d1-8b77-c045c51796f1" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="10d9a4dc-6fbd-4b1e-a9f7-14d13fc89d92" Operator="And" Category="Parameter" Property="Nombre" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        
+        
+        <Filter ID="9d752a24-0d47-4990-8e8f-441eb162b5a9" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+      
+      
+      
+      </Check>
+      
+      
+      
+    
+    
+    
+    </Section>
+    
+    
+    
+  
+    
+    
+    <Section ID="9fc4396c-e89a-4d6d-840d-6f0f334cb871" SectionName="04_Nombre_Parametros_Base" Title="" IsChecked="False" Description="Audita parametros base por categoria (plantilla historica): Marca y Comentarios [Desactivado: Model Checker no valida existencia pura, solo vacio/no vacio]">
+      
+      
+      
+      
+      <Check ID="6b5f870c-8add-48c6-982f-24c88cbfb46b" CheckName="Muros_Marca_NoValue" Description="PEB 4.10.9: validacion de nombre exacto del parametro 'Marca' en 'Muros'" FailureMessage="Hay elementos en 'Muros' con 'Marca' sin valor o parametro no disponible con ese nombre" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="a9d730aa-4f41-4318-9bc7-da06a97dfd76" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="3508b944-e26a-4fd8-8914-a2973ba5a5e8" Operator="And" Category="Parameter" Property="Marca" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="566b2552-9388-4b18-9774-e5a5b85de5c7" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="38f1d6b2-3785-466f-b7e9-3077b8c235e5" CheckName="Muros_Comentarios_NoValue" Description="PEB 4.10.9: validacion de nombre exacto del parametro 'Comentarios' en 'Muros'" FailureMessage="Hay elementos en 'Muros' con 'Comentarios' sin valor o parametro no disponible con ese nombre" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="65d42dde-4b00-4f14-9440-b08b4923176f" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="acd9dc91-068d-4321-9003-285a71601651" Operator="And" Category="Parameter" Property="Comentarios" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="e2b968f2-ec9a-492b-9b2a-c86172c0f8e9" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="cb19a22e-0c60-469b-9628-4d54e068bf10" CheckName="Puertas_Marca_NoValue" Description="PEB 4.10.9: validacion de nombre exacto del parametro 'Marca' en 'Puertas'" FailureMessage="Hay elementos en 'Puertas' con 'Marca' sin valor o parametro no disponible con ese nombre" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="9601efaa-035e-40aa-8349-2a80bfa61cdb" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="2be20147-50b8-4fdb-ae99-d940dfa99cc5" Operator="And" Category="Parameter" Property="Marca" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="8374e2e0-4794-4188-ae10-0ead2065349a" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="1921681d-618c-401f-adf1-eb2ae9e76409" CheckName="Puertas_Comentarios_NoValue" Description="PEB 4.10.9: validacion de nombre exacto del parametro 'Comentarios' en 'Puertas'" FailureMessage="Hay elementos en 'Puertas' con 'Comentarios' sin valor o parametro no disponible con ese nombre" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="ec01596a-cc8e-4381-8a60-f9d45b084d45" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="e05f97bc-4f07-4c8f-933d-52e06ae79373" Operator="And" Category="Parameter" Property="Comentarios" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="4f88b587-25b6-48b2-9dd2-6f5690a7f85e" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="876e78ac-d75e-4b9b-bf87-ab71da6d8b4b" CheckName="Ventanas_Marca_NoValue" Description="PEB 4.10.9: validacion de nombre exacto del parametro 'Marca' en 'Ventanas'" FailureMessage="Hay elementos en 'Ventanas' con 'Marca' sin valor o parametro no disponible con ese nombre" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="b98a7916-2882-44ad-8d49-9a059dbcb327" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="3780f604-db0d-4e63-a84b-c1525970e487" Operator="And" Category="Parameter" Property="Marca" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="f9de55bb-fd8b-4e77-bdde-d325688c0f25" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="1f3f7f06-2489-44a8-8ba1-c033ae7d1ceb" CheckName="Ventanas_Comentarios_NoValue" Description="PEB 4.10.9: validacion de nombre exacto del parametro 'Comentarios' en 'Ventanas'" FailureMessage="Hay elementos en 'Ventanas' con 'Comentarios' sin valor o parametro no disponible con ese nombre" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="a9a497ef-7a53-4632-91b9-35661d43a703" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="a6928f8b-e2de-495c-a844-d6385f5ee48f" Operator="And" Category="Parameter" Property="Comentarios" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="66719cda-91a8-4dba-b950-954646a8fd65" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="6b7b0b49-8b46-4b0e-9af8-8882807e5863" CheckName="Suelos_Marca_NoValue" Description="PEB 4.10.9: validacion de nombre exacto del parametro 'Marca' en 'Suelos'" FailureMessage="Hay elementos en 'Suelos' con 'Marca' sin valor o parametro no disponible con ese nombre" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="c29182b7-c040-433b-b931-2d2b30ca8757" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="9df28b0c-256e-4ae0-98e1-e2010b604391" Operator="And" Category="Parameter" Property="Marca" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="70ba4678-3453-48fd-b9c1-7c9d0ab6d2c9" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="7e67a127-3c4d-4075-84f5-5934801cf1a7" CheckName="Suelos_Comentarios_NoValue" Description="PEB 4.10.9: validacion de nombre exacto del parametro 'Comentarios' en 'Suelos'" FailureMessage="Hay elementos en 'Suelos' con 'Comentarios' sin valor o parametro no disponible con ese nombre" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="0d4b4aeb-d8e4-481f-b7da-8c5ea89d977e" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="e830a6f9-df1c-4c29-b299-a75827c108b4" Operator="And" Category="Parameter" Property="Comentarios" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="c06337fe-91c4-4b1f-a211-2d5a410a64d4" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+    
+    
+    </Section>
+    
+    
+    
+    
+    <Section ID="54037445-be38-4eb1-835d-099e9e91469e" SectionName="05A_Parametros_PEB_Instancia" Title="" IsChecked="False" Description="Diagnostico por INSTANCIA: el parametro existe en la categoria pero esta vacio, o no esta vinculado como parametro de instancia [Desactivado: Model Checker no valida existencia pura, solo vacio/no vacio]">
+      
+      
+      
+      
+      <Check ID="0749fc40-546b-4f8b-a666-1c49d221f14d" CheckName="Muros_ARG_SECTOR_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SECTOR' en 'Muros' [INSTANCIA]" FailureMessage="Hay elementos en 'Muros' con 'ARG_SECTOR' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="1c5c5924-a940-40b9-90e3-70ce46e02193" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="a5ac905b-a430-451a-a634-9d6c57311ca7" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="5f0f1432-73b0-478b-920f-36f8c62cdda3" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="95c0ad57-19f7-4d87-8eaa-24faf3131083" CheckName="Muros_ARG_NIVEL_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_NIVEL' en 'Muros' [INSTANCIA]" FailureMessage="Hay elementos en 'Muros' con 'ARG_NIVEL' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="80631e05-afb4-4e08-994f-31471acdc1e2" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="f8341d7e-dda2-45d5-947b-5a70a5fe3e3e" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="7ccdecdc-f1ea-4ea6-9129-3394e8abed8d" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="e51724a1-6ebb-43f9-9aea-949a515315c3" CheckName="Muros_ARG_SISTEMA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SISTEMA' en 'Muros' [INSTANCIA]" FailureMessage="Hay elementos en 'Muros' con 'ARG_SISTEMA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="f7eda496-99b8-4ec5-9b9b-4fab04e9817d" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="d7e9d90d-c2f3-4605-9981-8a4b6bbd01a3" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="f8f76cff-b5ea-4e48-ad70-799880ab040c" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="c1971675-f544-437a-a639-fea4b48a9653" CheckName="Muros_ARG_UNIFORMAT_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIFORMAT' en 'Muros' [INSTANCIA]" FailureMessage="Hay elementos en 'Muros' con 'ARG_UNIFORMAT' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="3934bc26-3ecd-4549-9f9d-0b6e80fe120c" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="8d10e88f-eb72-437e-8065-e585f798c0e1" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="d942e2b0-d790-4100-95f4-cead3070d6c7" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="694dce85-14e5-4a3e-9c2c-1f830b000597" CheckName="Muros_ARG_C?DIGO_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_C?DIGO DE PARTIDA' en 'Muros' [INSTANCIA]" FailureMessage="Hay elementos en 'Muros' con 'ARG_C?DIGO DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="c26821c3-b6f3-4636-8cb3-655ccb3024c9" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="f3247045-2510-4d67-a825-55bfae8fc1c4" Operator="And" Category="Parameter" Property="ARG_C?DIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="f8b94b9a-fd4b-4a97-b603-02f556e09f45" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="c24eefd6-5cef-443d-928d-6ed51072e213" CheckName="Muros_ARG_UNIDAD_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIDAD DE PARTIDA' en 'Muros' [INSTANCIA]" FailureMessage="Hay elementos en 'Muros' con 'ARG_UNIDAD DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="2ee68bed-1098-4409-8844-745929d39762" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="e19aa81c-9157-4939-98a2-073b70edcc0c" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="eb6ec6ee-5625-47de-9dfd-bb6a681fd173" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="0fb04258-cf2f-4bc4-8aad-656d453d061f" CheckName="Muros_ARG_DESCRIPCI?N_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_DESCRIPCI?N DE PARTIDA' en 'Muros' [INSTANCIA]" FailureMessage="Hay elementos en 'Muros' con 'ARG_DESCRIPCI?N DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="0179003e-7de8-4b9e-80ff-f809eaf5f432" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="6180d70f-cfa2-46ec-a780-2cbff33a480b" Operator="And" Category="Parameter" Property="ARG_DESCRIPCI?N DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="a1d09406-951c-444d-aa10-9e8d1106b9fa" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="e920aa41-0580-4ae7-8a4c-1cb208cd0569" CheckName="Puertas_ARG_SECTOR_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SECTOR' en 'Puertas' [INSTANCIA]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_SECTOR' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="1030c066-6e09-478a-be84-7d3e0976df54" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="2399df45-1b8e-44dc-bcec-fce3f686f66e" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="0ed18abe-7347-4ff4-bd36-85c4342444b1" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="4566870e-45ea-46fd-baf9-013b338f20bc" CheckName="Puertas_ARG_NIVEL_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_NIVEL' en 'Puertas' [INSTANCIA]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_NIVEL' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="e3290da5-7671-43c2-8214-f6d28e682dfc" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="f0263cb3-202f-42bb-a55e-08d416c616c5" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="eaa136d9-2126-4ea5-af39-ba9c6251fd2c" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="8f2d6453-75e3-4bc4-b07a-390a4a341520" CheckName="Puertas_ARG_SISTEMA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SISTEMA' en 'Puertas' [INSTANCIA]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_SISTEMA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="6b4062c3-5217-4e5f-987f-fc1e66e012ad" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="79798766-e88d-4755-8fbd-5848279c5330" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="417f5667-3551-4225-b7b5-0270b6eeba6c" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="25f7bd68-28b7-4f77-92bb-703011ee732f" CheckName="Puertas_ARG_UNIFORMAT_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIFORMAT' en 'Puertas' [INSTANCIA]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_UNIFORMAT' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="ec0748da-bbff-4cff-bbc9-24bf33a52e41" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="c5a4c295-a65c-49f5-a4fa-66c72d7c19ad" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="d18348fa-3fe1-4338-b7bb-c0adc5f949f7" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="db88ccf7-c9c6-4c59-9930-c2ea6ef50206" CheckName="Puertas_ARG_C?DIGO_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_C?DIGO DE PARTIDA' en 'Puertas' [INSTANCIA]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_C?DIGO DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="0b4f7a54-3c51-4a76-b7e2-62464aeb9f25" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="8130b257-7439-4190-a378-fbb39d186c67" Operator="And" Category="Parameter" Property="ARG_C?DIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="84b26fd5-dd01-4e8c-a37e-8bbb32fd6de4" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="4b7415e8-64ba-46d4-9e26-823ffcfbcaaf" CheckName="Puertas_ARG_UNIDAD_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIDAD DE PARTIDA' en 'Puertas' [INSTANCIA]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_UNIDAD DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="7b37be3d-55ce-438c-846a-a641e30ccc2f" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="b3947f98-a7ed-411b-b20f-ddacb1bf2085" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="0f9b8c87-5f1a-4b82-8513-3069244059e3" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="451a1a22-fb73-4b30-bf9e-4d96cc4d14d8" CheckName="Puertas_ARG_DESCRIPCI?N_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_DESCRIPCI?N DE PARTIDA' en 'Puertas' [INSTANCIA]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_DESCRIPCI?N DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="8d78f40d-fcf3-4ba1-9cdd-47f3346dbbc9" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="74553e3d-5818-4f52-b154-5859265dcba5" Operator="And" Category="Parameter" Property="ARG_DESCRIPCI?N DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="099f6028-882d-4a1d-abbd-dbc653c3b4fc" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="70f88a3b-97ed-42c1-861f-53ea67e10a26" CheckName="Ventanas_ARG_SECTOR_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SECTOR' en 'Ventanas' [INSTANCIA]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_SECTOR' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="d20192e7-bee5-438c-93d3-d4e3d7e46ed6" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="6f6da5c4-2923-4135-b1af-52a394c59815" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="0e364e80-13e6-4039-b80f-34db872718bc" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="06f63bae-76ca-4614-b089-6f2cdd4c0661" CheckName="Ventanas_ARG_NIVEL_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_NIVEL' en 'Ventanas' [INSTANCIA]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_NIVEL' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="e04e77e8-4c4b-4351-9651-0635928f4077" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="d595d969-8a86-446c-b56b-b58305671222" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="2b9aa98c-919e-489d-8a4b-27c2bbb059b8" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="a6174e96-1bfa-4dce-aa7c-7cfe38860f05" CheckName="Ventanas_ARG_SISTEMA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SISTEMA' en 'Ventanas' [INSTANCIA]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_SISTEMA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="bb881c31-1a44-43eb-b50f-a3a61cc6b9b1" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="2df067da-a39d-4c70-84db-99d5cded1852" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="b558d677-a392-4c6f-a0eb-d17fed34e5ec" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="27e63457-30f9-4f23-aadd-bb196c13ef55" CheckName="Ventanas_ARG_UNIFORMAT_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIFORMAT' en 'Ventanas' [INSTANCIA]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_UNIFORMAT' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="0343eb06-168d-4fea-b969-c8ff9c38e4d1" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="43873c19-7d32-4fc2-85f9-857ec3aff5ec" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="7d2ab446-f6c5-4ef6-b68b-b3c08243cc0a" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="83a96f63-0fa1-443a-a472-60d03da0b704" CheckName="Ventanas_ARG_C?DIGO_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_C?DIGO DE PARTIDA' en 'Ventanas' [INSTANCIA]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_C?DIGO DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="0d2ced49-332e-43dd-9017-85fed3035210" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="d34bc3f8-a119-4e91-94ad-944f56b60d2a" Operator="And" Category="Parameter" Property="ARG_C?DIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="720836b7-9afd-401d-91ef-d7b9d7f9bee4" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="51741383-021e-4f0a-b1bd-dbcafd30909b" CheckName="Ventanas_ARG_UNIDAD_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIDAD DE PARTIDA' en 'Ventanas' [INSTANCIA]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_UNIDAD DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="d7933c0c-edb2-45b8-9c9d-85b7b77f49a0" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="3767b079-7f87-4a6e-8b16-c81670fdfea5" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="940d656c-8a18-4b64-9187-19bc0ef0f8aa" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="47acd2ad-5c8e-427c-8739-1bec099bb9fc" CheckName="Ventanas_ARG_DESCRIPCI?N_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_DESCRIPCI?N DE PARTIDA' en 'Ventanas' [INSTANCIA]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_DESCRIPCI?N DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="285c80c3-a391-4300-9ef4-2bb8afc1bb0d" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="aac3c7d3-4aca-4570-b57e-64c50ba46e34" Operator="And" Category="Parameter" Property="ARG_DESCRIPCI?N DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="77e553b9-d771-47ef-ab53-834ef44af94f" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="2515649e-58a2-4cfa-9979-987f43dcfc70" CheckName="Suelos_ARG_SECTOR_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SECTOR' en 'Suelos' [INSTANCIA]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_SECTOR' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="f7121b04-4427-4e05-973e-b930b267c4f2" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="498dc25d-433f-4c63-83e6-ca8098a79293" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="7a353616-1a6b-48b8-92b9-bf70df914812" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="84c45507-1f66-4024-9b2b-4ac9eee1872e" CheckName="Suelos_ARG_NIVEL_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_NIVEL' en 'Suelos' [INSTANCIA]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_NIVEL' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="aaa86db3-18b5-4b55-bb80-77eebfb4a4d1" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="0bfd2eba-ded0-41bf-8d98-6f4bee8e3874" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="8ab89d38-55f6-401b-9235-476b30236d64" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="78c787b1-8f13-4887-9fa5-6585c9824336" CheckName="Suelos_ARG_SISTEMA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SISTEMA' en 'Suelos' [INSTANCIA]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_SISTEMA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="0d2f9338-d475-4856-84e8-85794f0ca9f5" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="bb84634c-3fa1-4ff2-8d7f-259388a51994" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="53b9215d-90fe-47bc-a888-42c785fc32fe" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="7e7c11f0-746a-4247-90fd-8a66ee4f13b3" CheckName="Suelos_ARG_UNIFORMAT_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIFORMAT' en 'Suelos' [INSTANCIA]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_UNIFORMAT' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="8b630248-040d-4ac1-a340-6c1612270549" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="deb07129-a7b1-4be2-aa39-96a91111a1a5" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="702da82c-0b48-4ed6-956c-498993102011" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="f661a4db-afd7-4813-814b-16bd519f5509" CheckName="Suelos_ARG_C?DIGO_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_C?DIGO DE PARTIDA' en 'Suelos' [INSTANCIA]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_C?DIGO DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="36a8d5cb-0ce3-4df1-9ebb-9debb6b37a6f" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="3872e644-11a4-40aa-89d6-0bf3d0f39704" Operator="And" Category="Parameter" Property="ARG_C?DIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="f0e2e121-3fb4-4bac-b354-734a5a1873cf" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="2cdc248a-a06b-47a6-a98a-44046236e182" CheckName="Suelos_ARG_UNIDAD_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIDAD DE PARTIDA' en 'Suelos' [INSTANCIA]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_UNIDAD DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="f8de8ea7-d6a6-4784-a86c-cb3ad2e88f11" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="b55c1a76-5d6f-485b-ae3a-03a2d516c668" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="255e2ea6-12fd-4ece-ae53-45031bc6bb3e" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="f81a3129-f5fc-4dcc-b2b1-465dee711861" CheckName="Suelos_ARG_DESCRIPCI?N_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_DESCRIPCI?N DE PARTIDA' en 'Suelos' [INSTANCIA]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_DESCRIPCI?N DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="fb593a71-47c8-47d7-ac27-45975349ab10" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="bf36eb22-1784-4884-9b41-4b9dc0925604" Operator="And" Category="Parameter" Property="ARG_DESCRIPCI?N DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="f392f0e1-9cbd-4701-b287-d898633b6674" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="7ab79f04-65cc-497e-ba71-44ab4b4e89e9" CheckName="Habitaciones_ARG_SECTOR_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SECTOR' en 'Habitaciones' [INSTANCIA]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_SECTOR' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="50a8335a-3973-4b3c-9505-698ff29de23a" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="661d5c46-a59e-40d2-9d81-4a0618ccbe1d" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="1b3e11b3-6bf8-4bb9-a831-a8068bee12d0" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="5cb57973-a9ae-48d8-a9d9-57b95cc926b1" CheckName="Habitaciones_ARG_NIVEL_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_NIVEL' en 'Habitaciones' [INSTANCIA]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_NIVEL' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="73e5eaee-bc4b-46ec-b8d9-0a9a8d3f8443" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="32d73b70-edc2-453c-bdfd-86aea5ea8285" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="cc3f218f-4b25-4d4c-bdb9-0efd5096d300" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="497bb573-0e26-4f8b-ad52-d64d7739c0f7" CheckName="Habitaciones_ARG_SISTEMA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SISTEMA' en 'Habitaciones' [INSTANCIA]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_SISTEMA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="1454a5cb-bcbf-428e-93df-1dc8f8f635fc" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="c230036c-b1d2-40ee-8f3d-651d14475130" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="e3e88dae-022f-48f4-9f82-3872bdcad5ca" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="c2ed7af6-89b3-42d0-8b3f-96cc1ddb1411" CheckName="Habitaciones_ARG_UNIFORMAT_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIFORMAT' en 'Habitaciones' [INSTANCIA]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_UNIFORMAT' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="a3f0bb91-93d6-4e29-be81-3135885894e1" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="5c27ecb7-f9de-407b-9a08-c2afb10d183e" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="6d4e1b31-7516-4674-8699-affb72bed5ee" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="34dfb4be-a435-4414-92bc-ef7a045cc408" CheckName="Habitaciones_ARG_C?DIGO_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_C?DIGO DE PARTIDA' en 'Habitaciones' [INSTANCIA]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_C?DIGO DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="caba7b7c-2c24-4d59-a5d8-5298ba81316d" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="98810bab-2abb-4566-a1af-ad709849e6ee" Operator="And" Category="Parameter" Property="ARG_C?DIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="055ba7d5-f41f-4896-916b-56c2648e1a25" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="4d76b81a-ea12-4ff4-9615-6506e6a3e86e" CheckName="Habitaciones_ARG_UNIDAD_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIDAD DE PARTIDA' en 'Habitaciones' [INSTANCIA]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_UNIDAD DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="19738f1a-906b-45a0-a02f-6d27c2c4d20d" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="9281f351-0867-43f2-975a-2dcaee5f1cba" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="876db88f-f54b-4ccc-aa51-2995a1592d5a" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="ba5ee731-ff76-4936-95d2-445a415fd9a2" CheckName="Habitaciones_ARG_DESCRIPCI?N_DE_PARTIDA_NoValue_Instancia" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_DESCRIPCI?N DE PARTIDA' en 'Habitaciones' [INSTANCIA]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_DESCRIPCI?N DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico INSTANCIA)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="34dcd834-93d8-43ed-8f43-d0a3f3fce7c9" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="4a43bc4e-6d67-4de0-8976-5244dbd2391c" Operator="And" Category="Parameter" Property="ARG_DESCRIPCI?N DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="e51f6dfa-beb5-4384-89f7-9bcc3aa29dc5" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+    
+    
+    </Section>
+    
+    
+  
+    
+    <Section ID="cd7e96f6-3d7b-470d-b533-52b29462fee2" SectionName="05B_Parametros_PEB_Tipo" Title="" IsChecked="False" Description="Diagnostico por TIPO: ayuda a detectar si el parametro esta definido como parametro de tipo y/o vacio en tipos [Desactivado: Model Checker no valida existencia pura, solo vacio/no vacio]">
+      
+      
+      
+      
+      <Check ID="09c730cc-0b58-445d-9652-05039ab2556c" CheckName="Muros_ARG_SECTOR_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SECTOR' en 'Muros' [TIPO]" FailureMessage="Hay elementos en 'Muros' con 'ARG_SECTOR' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="7096a398-1847-43c1-b447-1269f9c11cb2" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="9988711c-7a47-4f9e-a55a-8b89b8ab8954" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="712df8a8-c7df-4918-bccf-e5e056a7762f" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="933ebd8f-5920-4fde-991e-27b404642163" CheckName="Muros_ARG_NIVEL_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_NIVEL' en 'Muros' [TIPO]" FailureMessage="Hay elementos en 'Muros' con 'ARG_NIVEL' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="bebeb4e3-544e-4e77-8e26-196181bc6b39" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="6eb67e45-1376-4a8c-93dd-2198dcc7d158" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="5863caab-05a1-40dc-9d3e-aba82582872e" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="d9f421f8-c094-4236-ab4d-592fb0c33c97" CheckName="Muros_ARG_SISTEMA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SISTEMA' en 'Muros' [TIPO]" FailureMessage="Hay elementos en 'Muros' con 'ARG_SISTEMA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="ab61e18b-e076-4f3e-a259-90a18afe7536" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="43c8a7c7-a057-4186-a0f9-b3cd9fbe2de6" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="a446f6c8-247c-4765-b2c9-e330983fa9c3" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="2005dd4c-a34d-47e8-b7a7-4b941e1aa8b8" CheckName="Muros_ARG_UNIFORMAT_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIFORMAT' en 'Muros' [TIPO]" FailureMessage="Hay elementos en 'Muros' con 'ARG_UNIFORMAT' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="e807884d-7e4e-4d8f-8203-3a35ac65f21e" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="2a1ea276-b5dd-4d7d-98c9-149cb5e9b13b" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="ca9489b9-b2fe-4e29-aa71-0c00c384578e" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="55816fc6-56d0-43ad-9b47-35041318e73a" CheckName="Muros_ARG_C?DIGO_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_C?DIGO DE PARTIDA' en 'Muros' [TIPO]" FailureMessage="Hay elementos en 'Muros' con 'ARG_C?DIGO DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="841a3bc6-242a-41f7-a292-3f82fafe93ac" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="6b31686b-bde2-4db5-a1cf-26d9f46a25a8" Operator="And" Category="Parameter" Property="ARG_C?DIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="08945d6d-f030-499b-bdd0-acd68c8bbfa9" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="a635157a-5534-4464-b223-3e4c6d3f3711" CheckName="Muros_ARG_UNIDAD_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIDAD DE PARTIDA' en 'Muros' [TIPO]" FailureMessage="Hay elementos en 'Muros' con 'ARG_UNIDAD DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="547cc2be-0c9d-49e9-b48a-bada11d31d2b" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="8439699e-121b-4d48-8144-56abeb720155" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="6f9cea1f-5e5a-48ce-be2a-4b8ea75c9850" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="2b5693d9-5b3b-41e9-9905-61ae02ea12da" CheckName="Muros_ARG_DESCRIPCI?N_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_DESCRIPCI?N DE PARTIDA' en 'Muros' [TIPO]" FailureMessage="Hay elementos en 'Muros' con 'ARG_DESCRIPCI?N DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="34834fce-2d3b-4370-9808-7383cc5a1eb8" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="e5261470-0e13-495d-a308-6e89c69f1781" Operator="And" Category="Parameter" Property="ARG_DESCRIPCI?N DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="d56f08b1-ceeb-459c-8ce0-d81dd1423508" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="d27a85f4-85ca-47d7-bf45-dfca27be4212" CheckName="Puertas_ARG_SECTOR_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SECTOR' en 'Puertas' [TIPO]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_SECTOR' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="f8497a0a-5286-43c3-a2b4-2ade9798e8f6" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="b7856147-783f-45c3-b0da-809ee54fb47d" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="353a16ad-2852-42a0-8092-d41416e2252f" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="f57dc575-dbe4-4815-8d45-81c3a6fb7330" CheckName="Puertas_ARG_NIVEL_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_NIVEL' en 'Puertas' [TIPO]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_NIVEL' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="915fc8b2-d796-4cab-8707-53029e3df4e4" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="c309d685-c860-4f7e-9394-6e9788e52525" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="93153346-f00f-402f-956f-87158b3c73bc" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="1412a811-09bf-4720-8b2b-a553b5592f22" CheckName="Puertas_ARG_SISTEMA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SISTEMA' en 'Puertas' [TIPO]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_SISTEMA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="8648b9a3-4691-47a3-8415-77b2800f1a9c" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="b504e6e0-0c74-4122-8caa-1272ce83b431" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="de9550fc-83f7-4b47-b825-b7dcabac4f56" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="23542f65-77e9-448b-8e55-e844b3d0e99f" CheckName="Puertas_ARG_UNIFORMAT_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIFORMAT' en 'Puertas' [TIPO]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_UNIFORMAT' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="5757dad9-7bac-402c-b0f0-80bde5e597c0" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="dd16e31d-cdbf-4062-ab3a-36e26fb934c9" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="d624e3c7-e633-4790-b3cb-105edd810dac" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="7ebfbd7b-cd1a-4c12-8a82-a4c77163fc21" CheckName="Puertas_ARG_C?DIGO_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_C?DIGO DE PARTIDA' en 'Puertas' [TIPO]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_C?DIGO DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="30958bdb-9439-4aa4-8362-df77c666840b" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="2dc2d5db-1027-4999-87ca-d31433ab1126" Operator="And" Category="Parameter" Property="ARG_C?DIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="842a4783-f0a7-46cf-80d5-8e8cd2d81bed" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="8e3039a7-8841-49ae-ad2c-f81cb0ff67d3" CheckName="Puertas_ARG_UNIDAD_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIDAD DE PARTIDA' en 'Puertas' [TIPO]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_UNIDAD DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="c94480b3-e801-42e6-92b7-9c4ed0fa6bb8" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="95d819a6-e90b-4d6c-afda-48f5908d5391" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="0fa0fcaf-6a79-49ab-9219-6587501e598d" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="9e6547cd-aea1-445a-adc5-4a9a7d6bb2f2" CheckName="Puertas_ARG_DESCRIPCI?N_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_DESCRIPCI?N DE PARTIDA' en 'Puertas' [TIPO]" FailureMessage="Hay elementos en 'Puertas' con 'ARG_DESCRIPCI?N DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="e8888f26-7a17-4012-b12e-bfa6e3a119c0" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="79e822cd-bbdf-4ef9-8d6c-5773e08cb23c" Operator="And" Category="Parameter" Property="ARG_DESCRIPCI?N DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="9265d192-9b96-4aec-9bce-3f724d70e199" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="dc7c3db3-be10-409a-b6e7-0786e98dbff6" CheckName="Ventanas_ARG_SECTOR_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SECTOR' en 'Ventanas' [TIPO]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_SECTOR' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="e9fcfd1a-b1d1-4c9d-9e04-475acbf7b8fd" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="0d138a43-5cd0-4615-ae02-f191aea578e5" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="17ea868a-6f4b-4a13-b28f-2173fa94002b" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="5de76eaf-d992-422b-9b6e-1a0c4e72a076" CheckName="Ventanas_ARG_NIVEL_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_NIVEL' en 'Ventanas' [TIPO]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_NIVEL' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="0131ff8c-6d83-422e-94db-6702dbba763a" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="36a09edb-f52d-4299-951a-d643bee8b65d" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="52385464-378b-4894-be3a-d6dac58c94d3" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="d6f5de4f-d052-4267-a539-19aa50d5a038" CheckName="Ventanas_ARG_SISTEMA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SISTEMA' en 'Ventanas' [TIPO]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_SISTEMA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="cf74eef0-a4bc-4f08-bd8c-e34195c362be" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="7027a65c-d6c5-4fe8-834b-49b120cf8720" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="14fffdf7-8f7a-4812-b65b-5b4e1391a690" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="73219690-61d6-4e7c-b03c-f9c39207f955" CheckName="Ventanas_ARG_UNIFORMAT_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIFORMAT' en 'Ventanas' [TIPO]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_UNIFORMAT' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="f1076f66-9102-4b11-9414-7aad3c89deb2" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="cc6a23f3-0bef-4fee-8be6-8ae9a0c02780" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="78baf708-efc4-4d97-827b-a66f61486bb2" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="09bc8547-839d-4885-bdc0-d609ed2069c9" CheckName="Ventanas_ARG_C?DIGO_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_C?DIGO DE PARTIDA' en 'Ventanas' [TIPO]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_C?DIGO DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="c1cbd82f-4763-4c85-a8c6-21614b02bb98" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="f6655317-1afd-4181-9ead-20105a2cbb44" Operator="And" Category="Parameter" Property="ARG_C?DIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="287048a5-0f94-4f55-9e0d-c5e7aa5480a8" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="2d9a8f1c-3788-4a24-ade0-ba6c7cfd1fff" CheckName="Ventanas_ARG_UNIDAD_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIDAD DE PARTIDA' en 'Ventanas' [TIPO]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_UNIDAD DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="c21104ce-c16b-4e32-ad15-e22f0955956b" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="08b7b09d-11f8-45fb-adba-b3748d307723" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="d7162200-f542-4f98-9fec-f73497c5eb9e" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="41a8a556-3195-4ec5-8668-bf574038e1b0" CheckName="Ventanas_ARG_DESCRIPCI?N_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_DESCRIPCI?N DE PARTIDA' en 'Ventanas' [TIPO]" FailureMessage="Hay elementos en 'Ventanas' con 'ARG_DESCRIPCI?N DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="c3d57493-1c19-4d88-b9a4-b8f28d373662" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="a3ae1399-e7be-4fce-8ef4-b4d6a3ede224" Operator="And" Category="Parameter" Property="ARG_DESCRIPCI?N DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="a730c068-9ed4-4571-ba14-558dcfc52eec" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="3026e3b5-2e19-4f55-8f1b-5494ae34f3d4" CheckName="Suelos_ARG_SECTOR_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SECTOR' en 'Suelos' [TIPO]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_SECTOR' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="2a211cb1-929c-4354-8858-2b25151a5d51" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="db8b162c-1440-46ec-b4fb-b2d7cabb45d3" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="a71df8f2-d72f-40df-9ced-aaef431744a5" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="fad3a108-1ab4-45fa-b4df-e7ab025098dc" CheckName="Suelos_ARG_NIVEL_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_NIVEL' en 'Suelos' [TIPO]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_NIVEL' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="4ae0bd13-0bb6-481e-b320-66f8896c78dc" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="15b42b5f-8cd1-44c0-ba72-90f822d9b24c" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="c8774afb-804a-44ee-b016-85e4b3457455" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="70c15c90-be4e-464c-b641-bbc89d574c2f" CheckName="Suelos_ARG_SISTEMA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SISTEMA' en 'Suelos' [TIPO]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_SISTEMA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="8d076134-6ab5-4de7-977d-65aebf948b42" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="a7e1facf-17bd-4d2c-aedd-e931a71e1abe" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="5ce6425d-b607-4090-8298-3c46857ca037" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="450ca4d9-094c-425b-b28d-2377b8ef5d59" CheckName="Suelos_ARG_UNIFORMAT_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIFORMAT' en 'Suelos' [TIPO]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_UNIFORMAT' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="157145f7-6ade-4545-8458-843fe00e37da" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="26b7b530-374c-4c98-8261-4ff523deddd6" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="ba59b5da-e147-4be3-acd7-4f35a2851a30" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="b6878a83-120a-4374-8aea-4a9bd4dbdd4e" CheckName="Suelos_ARG_C?DIGO_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_C?DIGO DE PARTIDA' en 'Suelos' [TIPO]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_C?DIGO DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="23f2478f-79e4-46c0-a806-46723a321b6a" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="9c10d58a-9e06-40d7-b6d5-b3c194b84d34" Operator="And" Category="Parameter" Property="ARG_C?DIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="818a86bc-9107-4341-a306-43cfcd9ef43a" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="23cc6442-c155-4518-b3d5-e4300ae5fcc5" CheckName="Suelos_ARG_UNIDAD_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIDAD DE PARTIDA' en 'Suelos' [TIPO]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_UNIDAD DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="79f927bb-d261-4791-adc9-1d63bd62689f" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="a14b44d8-992c-42eb-805a-45e0606a5fce" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="9cd39501-3fb7-4504-9856-d08dcb663b8e" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="0a4bcff6-5ca8-4361-bf33-ec2668a00f47" CheckName="Suelos_ARG_DESCRIPCI?N_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_DESCRIPCI?N DE PARTIDA' en 'Suelos' [TIPO]" FailureMessage="Hay elementos en 'Suelos' con 'ARG_DESCRIPCI?N DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="6b0a2f91-c0cd-4b40-aa85-3bc18172e090" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="08987e6c-958e-4c1e-a678-a0c74d92177e" Operator="And" Category="Parameter" Property="ARG_DESCRIPCI?N DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="2ac8ce0d-f7d7-4712-a29b-e711116d0eac" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="37fb8dfa-1277-46ad-9754-059e989fbf82" CheckName="Habitaciones_ARG_SECTOR_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SECTOR' en 'Habitaciones' [TIPO]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_SECTOR' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="f6fa24e5-440f-4e05-a369-c2708fe440dd" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="0c1cf7d2-39c8-44dc-b21f-700085eef341" Operator="And" Category="Parameter" Property="ARG_SECTOR" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="1d1e0b01-ae35-4f34-9d57-a9ace02697ff" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="c4e19081-fbb8-495c-a3da-fcca229213ea" CheckName="Habitaciones_ARG_NIVEL_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_NIVEL' en 'Habitaciones' [TIPO]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_NIVEL' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="9796ef9c-99c8-4170-bf73-a452f2b653d7" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="0bd84fbf-cc53-4432-9cd7-ebd9bea1b8b3" Operator="And" Category="Parameter" Property="ARG_NIVEL" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="7e685f46-dbe1-4c48-a317-561aab9528be" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="1f124cac-89b5-4a0f-a7e2-a237c724eb3c" CheckName="Habitaciones_ARG_SISTEMA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_SISTEMA' en 'Habitaciones' [TIPO]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_SISTEMA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="8cc49be3-9db4-4e10-a364-757cf00f4125" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="8228af16-ebfa-4351-a1ed-034460d35799" Operator="And" Category="Parameter" Property="ARG_SISTEMA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="56ff8e94-420b-4b74-96a6-fc5a9b566398" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="112defac-a28d-4bb5-b03c-f17b225c7f6a" CheckName="Habitaciones_ARG_UNIFORMAT_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIFORMAT' en 'Habitaciones' [TIPO]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_UNIFORMAT' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="9dd43039-c4b3-4fd5-9263-ac5b5b774a07" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="53232777-1df4-44fd-8c3d-933645257742" Operator="And" Category="Parameter" Property="ARG_UNIFORMAT" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="c6942809-e252-4279-b7ea-c14e9752445a" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="68b18d18-346e-44e7-8a3d-920440a55cdb" CheckName="Habitaciones_ARG_C?DIGO_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_C?DIGO DE PARTIDA' en 'Habitaciones' [TIPO]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_C?DIGO DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="b12dd796-1e9c-4bc1-b0c0-3faa3c70818c" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="f9dde30f-4bc5-46ca-a3bb-e14e47b1be39" Operator="And" Category="Parameter" Property="ARG_C?DIGO DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="86f9962d-e1d2-47bc-889e-8be4dc2d9a2c" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="6290d0e9-b7dd-4236-9c5e-d472defa606c" CheckName="Habitaciones_ARG_UNIDAD_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_UNIDAD DE PARTIDA' en 'Habitaciones' [TIPO]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_UNIDAD DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="6c24d690-f822-49f4-badd-fb9ce21301e2" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="0917715a-4002-4d9d-859f-8fa7c002e7d0" Operator="And" Category="Parameter" Property="ARG_UNIDAD DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="69e6a53a-380b-43bc-ad15-582aa358dbb0" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+      
+      
+      <Check ID="45d3ade7-26c8-4780-b39c-eed9631565ba" CheckName="Habitaciones_ARG_DESCRIPCI?N_DE_PARTIDA_NoValue_Tipo" Description="PEB 4.11.3: validacion de nombre exacto del parametro 'ARG_DESCRIPCI?N DE PARTIDA' en 'Habitaciones' [TIPO]" FailureMessage="Hay elementos en 'Habitaciones' con 'ARG_DESCRIPCI?N DE PARTIDA' sin valor o parametro no disponible con ese nombre (diagnostico TIPO)" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        
+        
+        
+        
+        <Filter ID="9d566118-64f5-4eff-ae4c-8e08dca96476" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="d1c3c108-0078-4880-bd1d-06f849845ecb" Operator="And" Category="Parameter" Property="ARG_DESCRIPCI?N DE PARTIDA" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+        
+        
+        <Filter ID="4d545df9-f13f-4aef-8f84-3da2855d89d2" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None"/>
+        
+        
+      
+      
+      </Check>
+      
+      
+    
+    
+    </Section>
+    
+    
+  
+  
+  </Heading>
+  
+  
+  
+
+
+
+</MCSettings>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MCSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" AllowRequired="True" Name="Basico Model Checker R2024" Description="Checks basicos para prueba">
+  <Heading ID="b83b14ca-b384-44f9-b91e-96c1f4cec394" HeadingText="BASICO" Description="" IsChecked="True">
+    <Section ID="223c736b-7c76-4520-a9f3-2f92ffed488f" SectionName="Muros" Title="" IsChecked="True" Description="">
+      <Check ID="6be07f2a-5499-430b-b073-31541c4746a7" CheckName="Muros_Marca" Description="Comprueba muros con parametro Marca sin valor" FailureMessage="Hay muros con parametro Marca sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        <Filter ID="eb32613c-52c7-456e-8924-505ab0db3525" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="f16ce8ac-7efb-43ea-b646-8e73248dce3c" Operator="And" Category="Parameter" Property="Marca" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="7b15cec2-2464-4ba9-8eb9-6c38e7a608ec" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+      </Check>
+      <Check ID="83e2716a-4310-47f0-bed5-6b333a9604ef" CheckName="Muros_Comentarios" Description="Comprueba muros con parametro Comentarios sin valor" FailureMessage="Hay muros con parametro Comentarios sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        <Filter ID="7ba81138-818e-441c-ba5a-8e8b84a9a135" Operator="And" Category="Category" Property="Muros" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="dcd6f765-2d58-47d4-98f2-5a443e68d7a7" Operator="And" Category="Parameter" Property="Comentarios" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="847d223b-79bb-4635-8101-604f10f5b461" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+      </Check>
+    </Section>
+    <Section ID="5b45b34f-f9af-4588-a7cf-a13b20cffd64" SectionName="Puertas" Title="" IsChecked="True" Description="">
+      <Check ID="95b7a0e4-b622-4a5f-af24-4042b1efa09c" CheckName="Puertas_Marca" Description="Comprueba puertas con parametro Marca sin valor" FailureMessage="Hay puertas con parametro Marca sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        <Filter ID="979468d7-0527-42e9-b95f-a2c39eff4da7" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="14f3297a-df91-46e9-a411-216047876eaf" Operator="And" Category="Parameter" Property="Marca" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="51296fd6-2dbb-4e2b-ae42-109ee7ff9169" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+      </Check>
+      <Check ID="4f657116-67e1-4bbf-abb8-b26e0ffa372a" CheckName="Puertas_Comentarios" Description="Comprueba puertas con parametro Comentarios sin valor" FailureMessage="Hay puertas con parametro Comentarios sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        <Filter ID="5c307243-70f3-400c-a7bf-b72d1fb5d497" Operator="And" Category="Category" Property="Puertas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="e2fe3035-a60b-4438-841e-d8d8c446f856" Operator="And" Category="Parameter" Property="Comentarios" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="b1cffb09-26a0-4f06-b60a-5af2b89086d1" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+      </Check>
+    </Section>
+    <Section ID="33eb70c5-8edd-4937-ad75-dea690e06985" SectionName="Ventanas" Title="" IsChecked="True" Description="">
+      <Check ID="aa1acee7-5dfd-4150-9695-73d7de6fb42b" CheckName="Ventanas_Marca" Description="Comprueba ventanas con parametro Marca sin valor" FailureMessage="Hay ventanas con parametro Marca sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        <Filter ID="e69b3494-7c0b-45c2-ad0f-483e57c59970" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="e7e4c742-556a-45f9-818e-00cce2731083" Operator="And" Category="Parameter" Property="Marca" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="b7c0abba-45aa-4087-96ae-43937627c04e" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+      </Check>
+      <Check ID="003b884a-81bd-4012-a671-ef6f1307c54d" CheckName="Ventanas_Comentarios" Description="Comprueba ventanas con parametro Comentarios sin valor" FailureMessage="Hay ventanas con parametro Comentarios sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        <Filter ID="f27b050e-a36a-4f1c-b445-1f2a4e23e3b5" Operator="And" Category="Category" Property="Ventanas" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="1c4e5b1f-8a50-4a16-abe2-e072f80ff77a" Operator="And" Category="Parameter" Property="Comentarios" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="9b0cc459-7eff-4e09-9f8b-253cb3754a6e" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+      </Check>
+    </Section>
+    <Section ID="a39119ad-8201-4315-9108-fe06df4bf0e3" SectionName="Suelos" Title="" IsChecked="True" Description="">
+      <Check ID="bb601f1e-7ec8-47d8-a173-f7d57262c302" CheckName="Suelos_Marca" Description="Comprueba suelos con parametro Marca sin valor" FailureMessage="Hay suelos con parametro Marca sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        <Filter ID="e3dcdd82-5906-4e79-b4a8-93c8cac7affc" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="4adb0848-38c1-4a05-8ed9-7173539f3c88" Operator="And" Category="Parameter" Property="Marca" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="d6763412-838b-4ee4-a1ca-41150c0e114c" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+      </Check>
+      <Check ID="8ad27859-59a9-4953-a561-3d6fad28af11" CheckName="Suelos_Comentarios" Description="Comprueba suelos con parametro Comentarios sin valor" FailureMessage="Hay suelos con parametro Comentarios sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        <Filter ID="6f90c0fa-0f9b-445e-8c0e-dda0a44cd289" Operator="And" Category="Category" Property="Suelos" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="01e4f281-993e-4d97-bbb1-7b38e51a7815" Operator="And" Category="Parameter" Property="Comentarios" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="45b1ad34-109d-4c44-8b9f-16ebe1dcb209" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+      </Check>
+    </Section>
+    <Section ID="1b0df663-eced-4521-ac76-c1665d488883" SectionName="Habitaciones" Title="" IsChecked="True" Description="">
+      <Check ID="99e965c9-e7ea-41ce-a810-2c7b6cee151a" CheckName="Habitaciones_Numero" Description="Comprueba habitaciones con parametro Numero sin valor" FailureMessage="Hay habitaciones con parametro Numero sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        <Filter ID="44b8fd9a-0ef7-4921-9f09-ea8d431232e8" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="13957d51-cac4-438a-bfad-693c8531d467" Operator="And" Category="Parameter" Property="Numero" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="559545ab-47e0-41e0-959f-7d2d923b1f48" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+      </Check>
+      <Check ID="c12ec973-7da1-4e8c-bc4f-35e56d0852cb" CheckName="Habitaciones_Nombre" Description="Comprueba habitaciones con parametro Nombre sin valor" FailureMessage="Hay habitaciones con parametro Nombre sin valor" ResultCondition="FailMatchingElements" CheckType="Custom" IsRequired="True" IsChecked="True">
+        <Filter ID="59457dd1-a436-47c5-8feb-8d0f237b1f61" Operator="And" Category="Category" Property="Habitaciones" Condition="Included" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="100c8668-1090-4662-8a0a-2665bf9c3873" Operator="And" Category="Parameter" Property="Nombre" Condition="HasNoValue" Value="True" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+        <Filter ID="32f25c6d-40b5-4804-a6c3-76a196f631cc" Operator="And" Category="TypeOrInstance" Property="Is Element Type" Condition="Equal" Value="False" CaseInsensitive="False" Unit="None" UnitClass="None" FieldTitle="" UserDefined="False" Validation="None" />
+      </Check>
+    </Section>
+  </Heading>
+</MCSettings>

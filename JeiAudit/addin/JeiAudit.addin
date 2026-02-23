@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>JeiAudit</Name>
+    <Assembly>%AppData%\Autodesk\Revit\Addins\2024\JeiAudit\JeiAudit.dll</Assembly>
+    <AddInId>9D5D0A6E-5FEA-4E44-B9FD-B3093708D7B5</AddInId>
+    <FullClassName>JeiAudit.App</FullClassName>
+    <VendorId>JEIA</VendorId>
+    <VendorDescription>JeiAudit - Revit parameter existence auditor</VendorDescription>
+  </AddIn>
+</RevitAddIns>
